@@ -54,24 +54,40 @@
         "envoltura": {
           "title": "Envoltura",
           "limit": 1,
-          "choices": ["Palta", "Tempura Crispy", "Sésamo"]
+          "choices": [
+            "Palta",
+            "Tempura Crispy",
+            "Sésamo"
+          ]
         },
         "proteina": {
           "title": "Proteína",
           "limit": 1,
-          "choices": ["Pollo", "Camarón", "Jamón"]
+          "choices": [
+            "Pollo",
+            "Camarón",
+            "Jamón"
+          ]
         },
         "agregados": {
           "title": "Verduras / Agregados (Queso crema incluido ✨)",
           "limit": 2,
-          "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"]
+          "choices": [
+            "Palta",
+            "Cebollín",
+            "Morrón",
+            "Champiñón"
+          ]
         }
       },
       "general_options": {
         "salsas": {
           "title": "Salsa Incluida",
           "limit": 1,
-          "choices": ["Salsa Soya", "Salsa Teriyaki"]
+          "choices": [
+            "Salsa Soya",
+            "Salsa Teriyaki"
+          ]
         }
       }
     },
@@ -92,24 +108,40 @@
         "envoltura": {
           "title": "Envoltura",
           "limit": 1,
-          "choices": ["Palta", "Tempura Crispy", "Sésamo"]
+          "choices": [
+            "Palta",
+            "Tempura Crispy",
+            "Sésamo"
+          ]
         },
         "proteina": {
           "title": "Proteína",
           "limit": 1,
-          "choices": ["Pollo", "Camarón", "Jamón"]
+          "choices": [
+            "Pollo",
+            "Camarón",
+            "Jamón"
+          ]
         },
         "agregados": {
           "title": "Verduras / Agregados (Queso crema incluido ✨)",
           "limit": 2,
-          "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"]
+          "choices": [
+            "Palta",
+            "Cebollín",
+            "Morrón",
+            "Champiñón"
+          ]
         }
       },
       "general_options": {
         "salsas": {
           "title": "Salsas Incluidas",
           "limit": 2,
-          "choices": ["Salsa Soya", "Salsa Teriyaki"]
+          "choices": [
+            "Salsa Soya",
+            "Salsa Teriyaki"
+          ]
         }
       }
     },
@@ -130,17 +162,28 @@
         "proteina": {
           "title": "Proteína a Elección",
           "limit": 1,
-          "choices": ["Pollo", "Camarón"]
+          "choices": [
+            "Pollo",
+            "Camarón"
+          ]
         },
         "verduras": {
           "title": "Verduras a Elección (hasta 2)",
           "limit": 2,
-          "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"]
+          "choices": [
+            "Palta",
+            "Cebollín",
+            "Morrón",
+            "Champiñón"
+          ]
         },
         "salsa": {
           "title": "Salsa a Elección",
           "limit": 1,
-          "choices": ["Salsa Soya", "Salsa Teriyaki"]
+          "choices": [
+            "Salsa Soya",
+            "Salsa Teriyaki"
+          ]
         }
       }
     },
@@ -161,17 +204,28 @@
         "proteina": {
           "title": "Proteína a Elección",
           "limit": 1,
-          "choices": ["Pollo", "Camarón"]
+          "choices": [
+            "Pollo",
+            "Camarón"
+          ]
         },
         "verduras": {
           "title": "Verduras a Elección (hasta 2)",
           "limit": 2,
-          "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"]
+          "choices": [
+            "Palta",
+            "Cebollín",
+            "Morrón",
+            "Champiñón"
+          ]
         },
         "salsa": {
           "title": "Salsa a Elección",
           "limit": 1,
-          "choices": ["Salsa Soya", "Salsa Teriyaki"]
+          "choices": [
+            "Salsa Soya",
+            "Salsa Teriyaki"
+          ]
         }
       }
     },
@@ -192,17 +246,28 @@
         "proteina": {
           "title": "Proteína a Elección",
           "limit": 1,
-          "choices": ["Pollo", "Camarón"]
+          "choices": [
+            "Pollo",
+            "Camarón"
+          ]
         },
         "verduras": {
           "title": "Verduras a Elección (hasta 2)",
           "limit": 2,
-          "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"]
+          "choices": [
+            "Palta",
+            "Cebollín",
+            "Morrón",
+            "Champiñón"
+          ]
         },
         "salsa": {
           "title": "Salsa a Elección",
           "limit": 1,
-          "choices": ["Salsa Soya", "Salsa Teriyaki"]
+          "choices": [
+            "Salsa Soya",
+            "Salsa Teriyaki"
+          ]
         }
       }
     },
@@ -223,17 +288,31 @@
         "proteina": {
           "title": "Proteína",
           "limit": 1,
-          "choices": ["Pollo", "Jamón", "Machas", "Camarón"]
+          "choices": [
+            "Pollo",
+            "Jamón",
+            "Machas",
+            "Camarón"
+          ]
         },
         "vegetal": {
           "title": "Vegetal",
           "limit": 1,
-          "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"]
+          "choices": [
+            "Palta",
+            "Cebollín",
+            "Morrón",
+            "Champiñón"
+          ]
         },
         "salsa": {
           "title": "Salsa Casera",
           "limit": 1,
-          "choices": ["Pebre Casero", "Ají Casero", "Cilantro Casero"]
+          "choices": [
+            "Pebre Casero",
+            "Ají Casero",
+            "Cilantro Casero"
+          ]
         }
       }
     },
@@ -254,17 +333,31 @@
         "proteina": {
           "title": "Proteína",
           "limit": 1,
-          "choices": ["Pollo", "Jamón", "Machas", "Camarón"]
+          "choices": [
+            "Pollo",
+            "Jamón",
+            "Machas",
+            "Camarón"
+          ]
         },
         "vegetal": {
           "title": "Vegetal",
           "limit": 1,
-          "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"]
+          "choices": [
+            "Palta",
+            "Cebollín",
+            "Morrón",
+            "Champiñón"
+          ]
         },
         "salsa": {
           "title": "Salsa Casera",
           "limit": 1,
-          "choices": ["Pebre Casero", "Ají Casero", "Cilantro Casero"]
+          "choices": [
+            "Pebre Casero",
+            "Ají Casero",
+            "Cilantro Casero"
+          ]
         }
       }
     },
@@ -285,17 +378,31 @@
         "proteina": {
           "title": "Proteína",
           "limit": 1,
-          "choices": ["Pollo", "Jamón", "Machas", "Camarón"]
+          "choices": [
+            "Pollo",
+            "Jamón",
+            "Machas",
+            "Camarón"
+          ]
         },
         "vegetal": {
           "title": "Vegetal",
           "limit": 1,
-          "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"]
+          "choices": [
+            "Palta",
+            "Cebollín",
+            "Morrón",
+            "Champiñón"
+          ]
         },
         "salsa": {
           "title": "Salsa Casera",
           "limit": 1,
-          "choices": ["Pebre Casero", "Ají Casero", "Cilantro Casero"]
+          "choices": [
+            "Pebre Casero",
+            "Ají Casero",
+            "Cilantro Casero"
+          ]
         }
       }
     },
@@ -316,17 +423,31 @@
         "proteina": {
           "title": "Proteína",
           "limit": 1,
-          "choices": ["Pollo", "Jamón", "Machas", "Camarón"]
+          "choices": [
+            "Pollo",
+            "Jamón",
+            "Machas",
+            "Camarón"
+          ]
         },
         "vegetal": {
           "title": "Vegetal",
           "limit": 1,
-          "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"]
+          "choices": [
+            "Palta",
+            "Cebollín",
+            "Morrón",
+            "Champiñón"
+          ]
         },
         "salsa": {
           "title": "Salsa Casera",
           "limit": 1,
-          "choices": ["Pebre Casero", "Ají Casero", "Cilantro Casero"]
+          "choices": [
+            "Pebre Casero",
+            "Ají Casero",
+            "Cilantro Casero"
+          ]
         }
       }
     },
@@ -347,24 +468,41 @@
         "proteina": {
           "title": "Proteína Handroll",
           "limit": 1,
-          "choices": ["Pollo", "Camarón"]
+          "choices": [
+            "Pollo",
+            "Camarón"
+          ]
         },
         "verduras": {
           "title": "Verduras Handroll",
           "limit": 2,
-          "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"]
+          "choices": [
+            "Palta",
+            "Cebollín",
+            "Morrón",
+            "Champiñón"
+          ]
         }
       },
       "general_options": {
         "empanada_relleno": {
           "title": "Empanada Incluida",
           "limit": 1,
-          "choices": ["Pollo + Queso", "Jamón + Queso", "Camarón + Queso"]
+          "choices": [
+            "Pollo + Queso",
+            "Jamón + Queso",
+            "Camarón + Queso"
+          ]
         },
         "salsas": {
           "title": "Salsas Incluidas",
           "limit": 2,
-          "choices": ["Salsa Soya", "Teriyaki", "Pebre Casero", "Ají Casero"]
+          "choices": [
+            "Salsa Soya",
+            "Teriyaki",
+            "Pebre Casero",
+            "Ají Casero"
+          ]
         }
       }
     },
