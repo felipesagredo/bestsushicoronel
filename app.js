@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const DEFAULT_MENU_DATA = {
     "info": {
       "name": "BestSushi Coronel",
-      "slogan": "El mejor Sushi, Handrolls Crispy y Empanadas XL de Coronel",
+      "slogan": "El mejor Sushi, Handrolls Crispy y Empanadas de Coronel",
       "phone": "56937373076",
       "whatsapp_display": "+56 9 3737 3076",
       "instagram_url": "https://instagram.com/bestsushicoronel",
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { "id": "todas", "name": "🔥 Todas las Promos" },
       { "id": "sushi", "name": "🍣 Promos Sushi" },
       { "id": "handrolls", "name": "🌯 Handrolls Crispy" },
-      { "id": "empanadas", "name": "🥟 Empanadas XL" },
+      { "id": "empanadas", "name": "🥟 Empanadas" },
       { "id": "combos", "name": "🍱 Combos Mixtos" },
       { "id": "salsas", "name": "🌶️ Salsas y Extras" }
     ],
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         "id": "handroll-1x",
         "category": "handrolls",
-        "title": "1x Handroll Crispy XL",
+        "title": "1x Handroll Crispy",
         "price": 5500,
         "price_display": "$5.500",
         "badge": "1 HANDROLL",
@@ -92,12 +92,12 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         "id": "handroll-2x",
         "category": "handrolls",
-        "title": "2x Handrolls Crispy XL",
+        "title": "2x Handrolls Crispy",
         "price": 9990,
         "price_display": "$9.990",
         "badge": "¡MÁS POPULAR!",
         "popular": true,
-        "description": "Super Promo 2 Handrolls Crispy XL. Personaliza los sabores de cada Handroll de forma independiente.",
+        "description": "Super Promo 2 Handrolls Crispy. Personaliza los sabores de cada Handroll de forma independiente.",
         "image": "assets/promo_handrolls_ig.png",
         "customizable": true,
         "units_count": 2,
@@ -111,12 +111,12 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         "id": "handroll-3x",
         "category": "handrolls",
-        "title": "3x Handrolls Crispy XL",
+        "title": "3x Handrolls Crispy",
         "price": 13990,
         "price_display": "$13.990",
         "badge": "OFERTA 3X",
         "popular": false,
-        "description": "3 Handrolls Crispy XL. Personaliza cada Handroll con su propia proteína, verduras y salsa.",
+        "description": "3 Handrolls Crispy. Personaliza cada Handroll con su propia proteína, verduras y salsa.",
         "image": "assets/promo_handrolls_ig.png",
         "customizable": true,
         "units_count": 3,
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         "id": "empanada-1x",
         "category": "empanadas",
-        "title": "1x Empanada Frita XL",
+        "title": "1x Empanada Frita",
         "price": 3000,
         "price_display": "$3.000",
         "badge": "1 EMPANADA",
@@ -149,12 +149,12 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         "id": "empanada-2x",
         "category": "empanadas",
-        "title": "2x Empanadas Fritas XL",
+        "title": "2x Empanadas Fritas",
         "price": 5490,
         "price_display": "$5.490",
         "badge": "PROMO 2X",
         "popular": true,
-        "description": "2 Empanadas XL. Elige el relleno de cada empanada de forma independiente.",
+        "description": "2 Empanadas. Elige el relleno de cada empanada de forma independiente.",
         "image": "assets/promo_empanadas_ig.png",
         "customizable": true,
         "units_count": 2,
@@ -168,12 +168,12 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         "id": "empanada-3x",
         "category": "empanadas",
-        "title": "3x Empanadas Fritas XL",
+        "title": "3x Empanadas Fritas",
         "price": 7990,
         "price_display": "$7.990",
         "badge": "PROMO 3X",
         "popular": false,
-        "description": "3 Empanadas XL fritas al instante. Arma cada empanada a tu gusto.",
+        "description": "3 Empanadas fritas al instante. Arma cada empanada a tu gusto.",
         "image": "assets/promo_empanadas_ig.png",
         "customizable": true,
         "units_count": 3,
@@ -187,12 +187,12 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         "id": "empanada-5x",
         "category": "empanadas",
-        "title": "5x Empanadas Fritas XL",
+        "title": "5x Empanadas Fritas",
         "price": 12990,
         "price_display": "$12.990",
         "badge": "PACK FAMILIAR 5X",
         "popular": true,
-        "description": "¡Mega Pack 5 Empanadas XL! Personaliza las 5 empanadas una por una.",
+        "description": "¡Mega Pack 5 Empanadas! Personaliza las 5 empanadas una por una.",
         "image": "assets/promo_empanadas_ig.png",
         "customizable": true,
         "units_count": 5,
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "price_display": "$18.990",
         "badge": "COMBO REY",
         "popular": true,
-        "description": "20 Piezas de Sushi variadas + 2 Handrolls Crispy XL + 1 Empanada XL Frita.",
+        "description": "20 Piezas de Sushi variadas + 2 Handrolls Crispy + 1 Empanada Frita.",
         "image": "assets/promo_combos_ig.png",
         "customizable": true,
         "units_count": 2,
@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "verduras": { "title": "Verduras Handroll", "limit": 2, "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"] }
         },
         "general_options": {
-          "empanada_relleno": { "title": "Empanada XL Incluida", "limit": 1, "choices": ["Pollo + Queso", "Jamón + Queso", "Camarón + Queso"] },
+          "empanada_relleno": { "title": "Empanada Incluida", "limit": 1, "choices": ["Pollo + Queso", "Jamón + Queso", "Camarón + Queso"] },
           "salsas": { "title": "Salsas Incluidas", "limit": 2, "choices": ["Salsa Soya", "Teriyaki", "Pebre Casero", "Ají Casero"] }
         }
       },
