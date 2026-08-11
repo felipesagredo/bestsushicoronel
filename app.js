@@ -922,13 +922,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Also attach click listener as rock-solid fallback for mobile browsers
   if (checkoutWhatsappBtn) {
     checkoutWhatsappBtn.addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent default anchor tag behavior to avoid '#' issues on mobile/WebViews
       if (cart.length === 0) {
-        e.preventDefault();
         alert('Tu carrito está vacío. Agrega algunas promociones antes de pedir.');
         return;
       }
-      // Always rebuild URL fresh on click (guarantees latest cart state)
-      checkoutWhatsappBtn.href = buildWhatsAppUrl();
+      // Programmatically redirect to WhatsApp URL
+      window.location.href = buildWhatsAppUrl();
     });
   }
 
