@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjetas de Presentación & QR | BestSushi Coronel</title>
+  
+  <!-- Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #0e0f14;
+      --gold-primary: #d4af37;
+      --gold-light: #f3e5ab;
+      --border-gold: rgba(212, 175, 55, 0.4);
+      --font-main: 'Outfit', sans-serif;
+      --font-heading: 'Montserrat', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #1a1c23;
+      color: #fff;
+      font-family: var(--font-main);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .no-print-toolbar {
+      background: #0d0e12;
+      border: 1px solid var(--border-gold);
+      border-radius: 12px;
+      padding: 1rem 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
+
+    .btn-print {
+      background: linear-gradient(135deg, #d4af37, #aa820a);
+      color: #000;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-weight: 800;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s;
+    }
+
+    .btn-print:hover {
+      transform: scale(1.05);
+    }
+
+    /* Print sheet (A4 grid) */
+    .print-sheet {
+      background: #fff;
+      padding: 10mm;
+      width: 210mm;
+      min-height: 297mm;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+      display: grid;
+      grid-template-columns: repeat(2, 85mm);
+      grid-gap: 10mm 15mm;
+      justify-content: center;
+      align-content: start;
+    }
+
+    /* Business Card Style (85mm x 55mm standard) */
+    .biz-card {
+      width: 85mm;
+      height: 55mm;
+      background: linear-gradient(135deg, #14161d 0%, #0a0b0e 100%) !important;
+      border: 1px solid var(--gold-primary);
+      border-radius: 6mm;
+      padding: 5mm;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .biz-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2mm;
+      background: linear-gradient(90deg, #d4af37, #f3e5ab, #d4af37);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .card-front-header {
+      display: flex;
+      align-items: center;
+      gap: 3mm;
+    }
+
+    .card-logo {
+      width: 12mm;
+      height: 12mm;
+      border-radius: 50%;
+      border: 1px solid var(--gold-primary);
+      object-fit: cover;
+    }
+
+    .card-title-wrap h2 {
+      font-family: var(--font-heading);
+      font-size: 13pt;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .card-title-wrap span {
+      font-size: 7pt;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--gold-primary);
+    }
+
+    .card-slogan {
+      font-size: 7.5pt;
+      color: var(--gold-light);
+      font-weight: 600;
+      margin-top: 1mm;
+    }
+
+    .card-details {
+      font-size: 7pt;
+      color: #ccc;
+      display: flex;
+      flex-direction: column;
+      gap: 1mm;
+    }
+
+    .card-details p {
+      display: flex;
+      align-items: center;
+      gap: 2mm;
+    }
+
+    .card-details i {
+      color: var(--gold-primary);
+      width: 3mm;
+    }
+
+    /* Back Card */
+    .biz-card-back {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: radial-gradient(circle at center, #1b1d26 0%, #08090b 100%) !important;
+    }
+
+    .qr-box {
+      background: #0e0e0e;
+      padding: 1.5mm;
+      border-radius: 3mm;
+      border: 1px solid var(--gold-primary);
+    }
+
+    .qr-img {
+      width: 25mm;
+      height: 25mm;
+      display: block;
+    }
+
+    .qr-title {
+      font-family: var(--font-heading);
+      font-size: 8.5pt;
+      font-weight: 800;
+      color: var(--gold-primary);
+      margin-top: 2mm;
+      letter-spacing: 1px;
+    }
+
+    .qr-desc {
+      font-size: 6.5pt;
+      color: #aaa;
+    }
+
+    /* PRINT STYLES */
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+      }
+
+      .no-print-toolbar {
+        display: none !important;
+      }
+
+      .print-sheet {
+        box-shadow: none;
+        padding: 5mm;
+        width: 100%;
+        min-height: auto;
+      }
+
+      .biz-card {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print-toolbar">
+    <div>
+      <h2 style="color: var(--gold-primary); font-size: 1.3rem;">🎴 Hojas de Tarjetas de Presentación BestSushi</h2>
+      <p style="font-size: 0.85rem; color: #aaa;">Imprime directamente en papel/cartulina tamaño Carta o A4 y recorta por las líneas.</p>
+    </div>
+    <button class="btn-print" onclick="window.print()">
+      <i class="fas fa-print"></i> Imprimir Tarjetas (Ctrl + P)
+    </button>
+  </div>
+
+  <div class="print-sheet">
+
+    <!-- Tarjeta 1 - Frente -->
+    <div class="biz-card">
+      <div class="card-front-header">
+        <img src="assets/logo.png" alt="BestSushi Logo" class="card-logo">
+        <div class="card-title-wrap">
+          <h2>BestSushi</h2>
+          <span>CORONEL</span>
+        </div>
+      </div>
+      <p class="card-slogan">El mejor Sushi, Handrolls Crispy & Empanadas XL</p>
+      <div class="card-details">
+        <p><i class="fab fa-whatsapp"></i> +56 9 3737 3076</p>
+        <p><i class="fab fa-instagram"></i> @bestsushi.coronel</p>
+        <p><i class="fas fa-map-marker-alt"></i> Coronel, Región del Bío Bío</p>
+      </div>
+    </div>
+
+    <!-- Tarjeta 1 - Reverso QR -->
+    <div class="biz-card biz-card-back">
+      <div class="qr-box">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://bestsushicoronel.up.railway.app&color=d4af37&bgcolor=0e0e0e" alt="QR Code" class="qr-img">
+      </div>
+      <div class="qr-title">¡ESCANEA Y PIDE ONLINE!</div>
+      <div class="qr-desc">Delivery / Retiro en Local • Promos Exclusivas</div>
+    </div>
+
+    <!-- Tarjeta 2 - Frente -->
+    <div class="biz-card">
+      <div class="card-front-header">
+        <img src="assets/logo.png" alt="BestSushi Logo" class="card-logo">
+        <div class="card-title-wrap">
+          <h2>BestSushi</h2>
+          <span>CORONEL</span>
+        </div>
+      </div>
+      <p class="card-slogan">El mejor Sushi, Handrolls Crispy & Empanadas XL</p>
+      <div class="card-details">
+        <p><i class="fab fa-whatsapp"></i> +56 9 3737 3076</p>
+        <p><i class="fab fa-instagram"></i> @bestsushi.coronel</p>
+        <p><i class="fas fa-map-marker-alt"></i> Coronel, Región del Bío Bío</p>
+      </div>
+    </div>
+
+    <!-- Tarjeta 2 - Reverso QR -->
+    <div class="biz-card biz-card-back">
+      <div class="qr-box">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://bestsushicoronel.up.railway.app&color=d4af37&bgcolor=0e0e0e" alt="QR Code" class="qr-img">
+      </div>
+      <div class="qr-title">¡ESCANEA Y PIDE ONLINE!</div>
+      <div class="qr-desc">Delivery / Retiro en Local • Promos Exclusivas</div>
+    </div>
+
+    <!-- Tarjeta 3 - Frente -->
+    <div class="biz-card">
+      <div class="card-front-header">
+        <img src="assets/logo.png" alt="BestSushi Logo" class="card-logo">
+        <div class="card-title-wrap">
+          <h2>BestSushi</h2>
+          <span>CORONEL</span>
+        </div>
+      </div>
+      <p class="card-slogan">El mejor Sushi, Handrolls Crispy & Empanadas XL</p>
+      <div class="card-details">
+        <p><i class="fab fa-whatsapp"></i> +56 9 3737 3076</p>
+        <p><i class="fab fa-instagram"></i> @bestsushi.coronel</p>
+        <p><i class="fas fa-map-marker-alt"></i> Coronel, Región del Bío Bío</p>
+      </div>
+    </div>
+
+    <!-- Tarjeta 3 - Reverso QR -->
+    <div class="biz-card biz-card-back">
+      <div class="qr-box">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://bestsushicoronel.up.railway.app&color=d4af37&bgcolor=0e0e0e" alt="QR Code" class="qr-img">
+      </div>
+      <div class="qr-title">¡ESCANEA Y PIDE ONLINE!</div>
+      <div class="qr-desc">Delivery / Retiro en Local • Promos Exclusivas</div>
+    </div>
+
+    <!-- Tarjeta 4 - Frente -->
+    <div class="biz-card">
+      <div class="card-front-header">
+        <img src="assets/logo.png" alt="BestSushi Logo" class="card-logo">
+        <div class="card-title-wrap">
+          <h2>BestSushi</h2>
+          <span>CORONEL</span>
+        </div>
+      </div>
+      <p class="card-slogan">El mejor Sushi, Handrolls Crispy & Empanadas XL</p>
+      <div class="card-details">
+        <p><i class="fab fa-whatsapp"></i> +56 9 3737 3076</p>
+        <p><i class="fab fa-instagram"></i> @bestsushi.coronel</p>
+        <p><i class="fas fa-map-marker-alt"></i> Coronel, Región del Bío Bío</p>
+      </div>
+    </div>
+
+    <!-- Tarjeta 4 - Reverso QR -->
+    <div class="biz-card biz-card-back">
+      <div class="qr-box">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://bestsushicoronel.up.railway.app&color=d4af37&bgcolor=0e0e0e" alt="QR Code" class="qr-img">
+      </div>
+      <div class="qr-title">¡ESCANEA Y PIDE ONLINE!</div>
+      <div class="qr-desc">Delivery / Retiro en Local • Promos Exclusivas</div>
+    </div>
+
+  </div>
+
+</body>
+</html>

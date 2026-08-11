@@ -1,0 +1,22 @@
+{
+  "name": "pagina-web-bestsushi-coronel",
+  "version": "1.0.0",
+  "description": "Sitio web interactivo y sistema de pedidos por WhatsApp para BestSushi Coronel",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "sushi",
+    "coronel",
+    "handroll",
+    "whatsapp",
+    "railway"
+  ],
+  "author": "BestSushi Coronel",
+  "license": "ISC"
+}

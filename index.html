@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BestSushi Coronel | El mejor Sushi, Handrolls y Empanadas XL</title>
+  <meta name="description"
+    content="Descubre las mejores promociones de sushi, handrolls crispy y empanadas fritas XL en Coronel. Pide a domicilio o retira en local. ¡Atención de Lunes a Sábado!">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ================= NAV BAR ================= -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#inicio" class="nav-brand">
+        <img src="assets/logo.png" alt="BestSushi Coronel Logo" class="nav-logo">
+        <div class="nav-title">
+          BestSushi
+          <span>CORONEL</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#menu">Menú y Promos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#" id="open-card-modal-nav" class="nav-card-link"><i class="fas fa-qrcode"></i> Tarjeta QR</a></li>
+      </ul>
+
+      <button class="cart-btn-trigger" id="cart-btn-trigger" aria-label="Ver Carrito de Pedido">
+        <i class="fas fa-shopping-bag"></i>
+        <span>Mi Pedido</span>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="inicio" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content fade-in-up">
+          <span class="hero-badge">Sabor & Calidad Inigualable</span>
+          <h1 class="hero-title">El Sabor del Mejor <span class="text-gold">Sushi en Coronel</span></h1>
+          <p class="hero-subtitle">
+            Disfruta de nuestras exclusivas promos de 30 y 40 Piezas, Handrolls Crispy XL súper crujientes y Empanadas
+            Fritas XL rellenas al instante.
+          </p>
+          <div class="hero-actions">
+            <a href="#menu" class="btn-primary">
+              <i class="fas fa-utensils"></i> Ver Promociones
+            </a>
+            <a href="https://wa.me/56937373076" target="_blank" class="btn-whatsapp" id="hero-whatsapp-btn">
+              <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+            </a>
+          </div>
+
+          <div class="hero-features">
+            <div class="feature-item">
+              <i class="fas fa-motorcycle"></i>
+              <span>Delivery a Domicilio</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-star"></i>
+              <span>Ingredientes de Calidad</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-store"></i>
+              <span>Retiro en Local</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-banner-card fade-in-up">
+          <img src="assets/promo_sushi.png" alt="Nuevas Promos BestSushi Coronel">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MENU & PROMOS SECTION ================= -->
+  <section id="menu" class="menu-section">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <span class="section-tag">NUESTRA CARTA Y NAVEGACIÓN DÍA A DÍA</span>
+        <h2 class="section-title">Promociones & Menú Especial</h2>
+      </div>
+
+      <!-- Categories Filter Tabs -->
+      <div class="categories-nav" id="categories-nav">
+        <!-- Dynamically rendered via app.js -->
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="products-grid">
+        <!-- Dynamically rendered via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN INTERACTIVA "ARMA TU PEDIDO" ================= -->
+  <section id="configurador-section" class="configurator-section" style="display: none;">
+    <div class="container">
+      <div class="configurator-card">
+        <div class="configurator-header">
+          <div>
+            <span class="section-tag"><i class="fas fa-sliders-h"></i> PASO A PASO EN LA PÁGINA</span>
+            <h2 id="configurator-title" class="configurator-title">Arma tu Promo</h2>
+            <p id="configurator-price" class="configurator-price">$0</p>
+          </div>
+          <button type="button" class="btn-close-configurator" id="btn-close-configurator" title="Cerrar personalizador">
+            <i class="fas fa-times"></i> Cancelar
+          </button>
+        </div>
+
+        <div class="configurator-body" id="configurator-body">
+          <!-- Dynamically populated by app.js -->
+        </div>
+
+        <div class="configurator-summary-bar">
+          <div class="summary-details-wrap">
+            <span class="summary-label">Resumen de tu selección:</span>
+            <p id="configurator-summary-text" class="summary-text">Selecciona tus ingredientes...</p>
+          </div>
+          <button type="button" class="btn-primary btn-add-configurator" id="configurator-add-btn">
+            <i class="fas fa-cart-plus"></i> Agregar al Pedido
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contacto" class="contact-section">
+    <div class="container">
+      <div class="contact-card fade-in-up">
+        <div class="contact-grid">
+
+          <div class="contact-info">
+            <span class="section-tag">ESTAMOS PARA ATENDERTE</span>
+            <h2 class="section-title" style="font-size: 2rem; margin-bottom: 1.5rem;">Información de Contacto & Pedidos
+            </h2>
+
+            <ul class="contact-info-list">
+              <li class="contact-info-item">
+                <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                <div class="contact-text">
+                  <h4>Pedidos y Consultas WhatsApp</h4>
+                  <p id="contact-phone">+56 9 3737 3076</p>
+                </div>
+              </li>
+
+              <li class="contact-info-item">
+                <div class="contact-icon"><i class="far fa-clock"></i></div>
+                <div class="contact-text">
+                  <h4>Horarios de Atención</h4>
+                  <p id="contact-schedule">Lunes a Sábado: 12:00 del día a 22:00 hrs</p>
+                </div>
+              </li>
+
+              <li class="contact-info-item">
+                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="contact-text">
+                  <h4>Ubicación & Cobertura</h4>
+                  <p>Coronel, Región del Bío Bío · Servicio Delivery y Retiro en Local</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Instagram Feature Card -->
+          <div class="instagram-box">
+            <i class="fab fa-instagram instagram-icon"></i>
+            <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">
+              ¡Síguenos en Instagram!</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+              Entérate de sorteos, promociones del día y contenido exclusivo de BestSushi Coronel.
+            </p>
+            <a href="https://instagram.com/bestsushicoronel" target="_blank" class="btn-instagram"
+              id="contact-instagram-link">
+              <i class="fab fa-instagram"></i> @bestsushicoronel
+            </a>
+          </div>
+
+        </div>
+      </div>
+  </section>
+
+  <!-- ================= TARJETA DE PRESENTACIÓN & QR MODAL ================= -->
+  <div class="modal-overlay" id="card-modal-overlay">
+    <div class="modal-container card-modal-container">
+      <button class="modal-close" id="card-modal-close"><i class="fas fa-times"></i></button>
+
+      <div class="modal-header">
+        <h3><i class="fas fa-qrcode" style="color: var(--gold-primary);"></i> Tarjeta de Presentación & QR</h3>
+        <p>Escanea con tu celular o imprime las tarjetas de presentación para la feria.</p>
+      </div>
+
+      <div class="modal-body card-modal-body">
+        <div class="biz-card-preview-wrap">
+          <!-- Frente -->
+          <div class="biz-card biz-card-front">
+            <div class="biz-card-brand">
+              <img src="assets/logo.png" alt="BestSushi Logo" class="biz-card-logo">
+              <div class="biz-card-title-wrap">
+                <span class="biz-card-title">BestSushi</span>
+                <span class="biz-card-subtitle">CORONEL</span>
+              </div>
+            </div>
+            <p class="biz-card-slogan">El mejor Sushi, Handrolls Crispy & Empanadas XL</p>
+            <div class="biz-card-info">
+              <p><i class="fab fa-whatsapp"></i> +56 9 3737 3076</p>
+              <p><i class="fab fa-instagram"></i> @bestsushi.coronel</p>
+              <p><i class="fas fa-map-marker-alt"></i> Coronel, Región del Bío Bío</p>
+            </div>
+          </div>
+
+          <!-- Reverso -->
+          <div class="biz-card biz-card-back">
+            <div class="qr-box">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://bestsushicoronel.up.railway.app&color=d4af37&bgcolor=0e0e0e" alt="QR BestSushi Coronel" class="qr-img" id="qr-modal-img">
+            </div>
+            <p class="qr-text">¡ESCANEA Y PIDE ONLINE!</p>
+            <span class="qr-subtext">Delivery / Retiro en Local</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer" style="display:flex; justify-content:center; gap:12px;">
+        <a href="tarjeta.html" target="_blank" class="btn-primary">
+          <i class="fas fa-print"></i> Imprimir Tarjetas (Hoja Oficio/Carta)
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= CART BACKDROP & DRAWER ================= -->
+  <div class="cart-backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <h3 style="margin:0;"><i class="fas fa-shopping-basket" style="color: var(--gold-primary);"></i> Tu Pedido</h3>
+        <button class="btn-clear-cart" id="cart-clear-btn" title="Vaciar Carrito">
+          <i class="fas fa-trash-alt"></i> Vaciar
+        </button>
+      </div>
+      <button class="modal-close" id="cart-close"><i class="fas fa-times"></i></button>
+    </div>
+
+    <div class="cart-items-list" id="cart-items-list">
+      <!-- Items dynamically injected -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Total:</span>
+        <span class="text-gold" id="cart-total-amount">$0</span>
+      </div>
+      <button class="btn-whatsapp btn-checkout-whatsapp" id="checkout-whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Enviar Pedido a WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+  <a href="https://wa.me/56937373076" target="_blank" class="floating-whatsapp" id="floating-whatsapp"
+    aria-label="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 BestSushi Coronel. Todos los derechos reservados.</p>
+      <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+        El mejor sushi, handrolls crispy y empanadas fritas XL de la Región del Bío Bío.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+
+</html>
