@@ -1046,6 +1046,39 @@ body {
   }
 }
 
+/* Mobile Cart Drawer - Full Width */
+@media (max-width: 600px) {
+  .cart-drawer {
+    right: -100%;
+    width: 100%;
+    max-width: 100%;
+    border-left: none;
+    border-top: 2px solid var(--border-gold);
+  }
+
+  .cart-drawer.open {
+    right: 0;
+  }
+
+  .cart-header {
+    padding: 1rem 1.2rem;
+  }
+
+  .cart-items-list {
+    padding: 1rem 1.2rem;
+  }
+
+  .cart-footer {
+    padding: 1rem 1.2rem;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+  }
+
+  .btn-checkout-whatsapp {
+    font-size: 1.1rem;
+    padding: 1.1rem;
+  }
+}
+
 /* Clear Cart Button */
 .btn-clear-cart {
   background: rgba(231, 76, 60, 0.15);

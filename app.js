@@ -795,6 +795,9 @@ document.addEventListener('DOMContentLoaded', () => {
       cartClearBtn.style.display = cart.length > 0 ? 'inline-flex' : 'none';
     }
 
+    // Update WhatsApp link with current cart contents
+    updateWhatsAppLink();
+
     cartItemsList.innerHTML = '';
 
     if (cart.length === 0) {
@@ -886,13 +889,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Generate WhatsApp Order Link
-  checkoutWhatsappBtn.addEventListener('click', () => {
-    if (cart.length === 0) {
-      alert('Tu carrito está vacío. Agrega algunas promociones antes de pedir.');
-      return;
-    }
-
+  // Build WhatsApp URL from current cart state
+  function buildWhatsAppUrl() {
     const phone = menuData && menuData.info ? menuData.info.phone : '56937373076';
     let text = `*¡HOLA BESTSUSHI CORONEL!* 🍱\n`;
     text += `*Nuevo Pedido desde la Página Web*\n\n`;
@@ -908,10 +906,31 @@ document.addEventListener('DOMContentLoaded', () => {
     text += `🛵 *Modalidad:* Delivery / Retiro en local\n`;
     text += `Por favor confirmen mi pedido y tiempo estimado de entrega. ¡Muchas gracias! 🙏✨`;
 
-    // wa.me es el enlace universal: app nativa en móvil, WhatsApp Web en desktop
-    const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
-    window.open(waUrl, '_blank');
-  });
+    return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+  }
+
+  // Update WhatsApp link href dynamically whenever cart changes
+  function updateWhatsAppLink() {
+    if (!checkoutWhatsappBtn) return;
+    if (cart.length > 0) {
+      checkoutWhatsappBtn.href = buildWhatsAppUrl();
+    } else {
+      checkoutWhatsappBtn.href = '#';
+    }
+  }
+
+  // Also attach click listener as rock-solid fallback for mobile browsers
+  if (checkoutWhatsappBtn) {
+    checkoutWhatsappBtn.addEventListener('click', (e) => {
+      if (cart.length === 0) {
+        e.preventDefault();
+        alert('Tu carrito está vacío. Agrega algunas promociones antes de pedir.');
+        return;
+      }
+      // Always rebuild URL fresh on click (guarantees latest cart state)
+      checkoutWhatsappBtn.href = buildWhatsAppUrl();
+    });
+  }
 
   // IntersectionObserver for scroll animations
   function setupScrollAnimations() {
