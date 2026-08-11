@@ -578,8 +578,8 @@ document.addEventListener('DOMContentLoaded', () => {
     configuratorSection.style.display = 'block';
     updateLiveSummary();
 
-    // Smooth scroll directly to the section
-    configuratorSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Custom smooth scroll that starts slower over promotions and accelerates to the configurator
+    customAcceleratedScrollTo(configuratorSection, 1200);
   }
 
   function updateLiveSummary() {
@@ -930,6 +930,59 @@ document.addEventListener('DOMContentLoaded', () => {
       // Programmatically redirect to WhatsApp URL
       window.location.href = buildWhatsAppUrl();
     });
+  }
+
+  // Handle Hero Image click: Filter by Sushi and scroll
+  const heroImageLink = document.getElementById('hero-image-link');
+  if (heroImageLink) {
+    heroImageLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      currentCategory = 'sushi';
+      
+      // Update UI active category tabs
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        if (btn.textContent.includes('Sushi')) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      
+      renderProducts();
+      
+      const menuSection = document.getElementById('menu');
+      if (menuSection) {
+        menuSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+
+  // Custom scroll animation that starts slow (ease-in) and gets faster
+  function customAcceleratedScrollTo(element, duration = 1200) {
+    const targetY = element.getBoundingClientRect().top + window.pageYOffset;
+    const startY = window.pageYOffset;
+    const distance = targetY - startY;
+    let startTime = null;
+
+    // Cubic Ease-In: starts slow, accelerates
+    function easeInCubic(t) {
+      return t * t * t;
+    }
+
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+      
+      const ease = easeInCubic(progress);
+      window.scrollTo(0, startY + distance * ease);
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    }
+
+    requestAnimationFrame(animation);
   }
 
   // IntersectionObserver for scroll animations
