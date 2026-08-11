@@ -394,9 +394,17 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
 
-      // Event Listener
+      // Event Listeners
       const addBtn = card.querySelector('.btn-add-item');
-      addBtn.addEventListener('click', () => handleAddProductClick(item));
+      addBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        handleAddProductClick(item);
+      });
+
+      const imgWrap = card.querySelector('.product-card-img-wrap');
+      if (imgWrap) {
+        imgWrap.addEventListener('click', () => handleAddProductClick(item));
+      }
 
       productsGrid.appendChild(card);
     });
