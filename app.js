@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "instagram_handle": "@bestsushicoronel",
       "horario": "Lunes a Sábado: 12:00 a 22:00 hrs",
       "ubicacion": "Coronel, Región del Bío Bío",
-      "modalidad": "Delivery a Domicilio y Retiro en Local"
+      "modalidad": "Exclusivo Retiro en Local"
     },
     "categories": [
       { "id": "todas", "name": "🔥 Todas las Promos" },
@@ -69,6 +69,30 @@ document.addEventListener('DOMContentLoaded', () => {
         "general_options": {
           "salsas": { "title": "Salsas Incluidas", "limit": 2, "choices": ["Salsa Soya", "Salsa Teriyaki"] }
         }
+      },
+      {
+        "id": "sushi-30-piezas-clasica",
+        "category": "sushi",
+        "title": "Promo 30 Piezas Clásicas (Lista para Servir)",
+        "price": 12990,
+        "price_display": "$12.990",
+        "badge": "LISTA PARA SERVIR",
+        "popular": false,
+        "description": "Sin personalizar, lista para servir. Incluye: 10 Piezas Envueltas en Palta, 10 Tempura Hot Roll y 10 Envueltas en Sésamo (Salsas Soya y Teriyaki incluidas).",
+        "image": "assets/promo_sushi_ig.png",
+        "customizable": false
+      },
+      {
+        "id": "sushi-40-piezas-clasica",
+        "category": "sushi",
+        "title": "Promo 40 Piezas Clásicas (Lista para Servir)",
+        "price": 16990,
+        "price_display": "$16.990",
+        "badge": "LISTA PARA SERVIR",
+        "popular": false,
+        "description": "Sin personalizar, lista para servir. Incluye: 10 Envueltas en Palta, 10 Tempura Hot Roll, 10 Envueltas en Sésamo y 10 Tempura de Pollo (Salsas Soya y Teriyaki incluidas).",
+        "image": "assets/promo_sushi_ig.png",
+        "customizable": false
       },
       {
         "id": "handroll-1x",
@@ -489,6 +513,9 @@ document.addEventListener('DOMContentLoaded', () => {
     selectedItemTouches = [];
     selectedExtras = [];
 
+    let unitContainers = [];
+
+
     configuratorTitle.textContent = item.title;
     configuratorPrice.textContent = item.price_display;
     configuratorBody.innerHTML = '';
@@ -565,6 +592,8 @@ document.addEventListener('DOMContentLoaded', () => {
           optGroup.choices.forEach(choice => {
             const chip = document.createElement('div');
             chip.className = 'option-chip';
+            chip.dataset.key = optKey;
+            chip.dataset.option = choice;
             chip.innerHTML = `<i class="far fa-circle"></i> <span>${choice}</span>`;
 
             chip.addEventListener('click', () => {
@@ -596,6 +625,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const chip = document.createElement('button');
             chip.type = 'button';
             chip.className = 'exclusion-chip';
+            chip.dataset.exclusion = excl;
             chip.innerHTML = `<i class="far fa-circle"></i> Sin ${excl}`;
             chip.addEventListener('click', () => {
               const index = selectedUnitExclusions[u].indexOf(excl);
@@ -632,6 +662,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const chip = document.createElement('button');
             chip.type = 'button';
             chip.className = 'touch-chip';
+            chip.dataset.touch = touch;
             chip.innerHTML = `<i class="far fa-circle"></i> ${touch}`;
             chip.addEventListener('click', () => {
               const index = selectedUnitTouches[u].indexOf(touch);
@@ -650,6 +681,36 @@ document.addEventListener('DOMContentLoaded', () => {
           });
           unitBox.appendChild(touchesGroupDiv);
         }
+
+        // Navigation bar at the bottom of the unit box
+        const navBar = document.createElement('div');
+        navBar.className = 'unit-nav-bar';
+        navBar.style.cssText = 'margin-top: 1.5rem; display: flex; justify-content: flex-end; border-top: 1px solid #edf2f7; padding-top: 1.25rem;';
+
+        // Next / Siguiente button (if not the last unit)
+        if (u < unitsCount) {
+          const nextBtn = document.createElement('button');
+          nextBtn.type = 'button';
+          nextBtn.className = 'btn-next-unit';
+          nextBtn.style.cssText = 'padding: 0.65rem 1.5rem; border-radius: 20px; border: none; background: var(--red-accent); color: #ffffff; font-weight: 700; cursor: pointer; transition: all 0.2s; font-size: 0.85rem; display: inline-flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 4px 10px rgba(224,18,60,0.15);';
+          nextBtn.innerHTML = `Siguiente ${unitLabel} <i class="fas fa-arrow-right"></i>`;
+          nextBtn.addEventListener('click', () => {
+            // Activate the next tab
+            const nextIdx = u + 1;
+            const nextContainer = unitContainers.find(uc => uc.u === nextIdx);
+            if (nextContainer) {
+              nextContainer.tabBtn.click();
+              // Scroll the configurator title back into view
+              const configuratorHeader = document.getElementById('configurator-title');
+              if (configuratorHeader) {
+                configuratorHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }
+          });
+          navBar.appendChild(nextBtn);
+        }
+
+        unitBox.appendChild(navBar);
 
         configuratorBody.appendChild(unitBox);
       }

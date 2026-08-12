@@ -8,7 +8,7 @@
     "instagram_handle": "@bestsushicoronel",
     "horario": "Lunes a Sábado: 12:00 a 22:00 hrs",
     "ubicacion": "Coronel, Región del Bío Bío",
-    "modalidad": "Delivery a Domicilio y Retiro en Local"
+    "modalidad": "Exclusivo Retiro en Local"
   },
   "categories": [
     {
@@ -142,6 +142,30 @@
           ]
         }
       }
+    },
+    {
+      "id": "sushi-30-piezas-clasica",
+      "category": "sushi",
+      "title": "Promo 30 Piezas Clásicas (Lista para Servir)",
+      "price": 12990,
+      "price_display": "$12.990",
+      "badge": "LISTA PARA SERVIR",
+      "popular": false,
+      "description": "Sin personalizar, lista para servir. Incluye: 10 Piezas Envueltas en Palta, 10 Tempura Hot Roll y 10 Envueltas en Sésamo (Salsas Soya y Teriyaki incluidas).",
+      "image": "assets/promo_sushi_ig.png",
+      "customizable": false
+    },
+    {
+      "id": "sushi-40-piezas-clasica",
+      "category": "sushi",
+      "title": "Promo 40 Piezas Clásicas (Lista para Servir)",
+      "price": 16990,
+      "price_display": "$16.990",
+      "badge": "LISTA PARA SERVIR",
+      "popular": false,
+      "description": "Sin personalizar, lista para servir. Incluye: 10 Envueltas en Palta, 10 Tempura Hot Roll, 10 Envueltas en Sésamo y 10 Tempura de Pollo (Salsas Soya y Teriyaki incluidas).",
+      "image": "assets/promo_sushi_ig.png",
+      "customizable": false
     },
     {
       "id": "handroll-1x",
