@@ -30,9 +30,18 @@ const server = http.createServer((req, res) => {
   if (reqUrl === '/') reqUrl = '/index.html';
 
   let filePath = path.join(__dirname, reqUrl);
-  let extname = path.extname(filePath).toLowerCase();
+  
+  // Resolve target path and prevent Directory Traversal
+  const safePath = path.resolve(filePath);
+  if (!safePath.startsWith(__dirname)) {
+    res.writeHead(403, { 'Content-Type': 'text/plain; charset=UTF-8' });
+    res.end('403 Forbidden - Acceso denegado');
+    return;
+  }
 
-  fs.stat(filePath, (err, stats) => {
+  let extname = path.extname(safePath).toLowerCase();
+
+  fs.stat(safePath, (err, stats) => {
     if (err || !stats.isFile()) {
       res.writeHead(404, { 'Content-Type': 'text/html; charset=UTF-8' });
       res.end('<h1>404 - Página no encontrada</h1><p><a href="/">Volver a BestSushi Coronel</a></p>');
@@ -42,10 +51,21 @@ const server = http.createServer((req, res) => {
     const contentType = MIME_TYPES[extname] || 'application/octet-stream';
     res.writeHead(200, {
       'Content-Type': contentType,
-      'Cache-Control': 'public, max-age=3600'
+      'Cache-Control': 'public, max-age=3600',
+      'X-Content-Type-Options': 'nosniff',
+      'X-Frame-Options': 'DENY',
+      'X-XSS-Protection': '1; mode=block',
+      'Referrer-Policy': 'no-referrer-when-downgrade'
     });
 
-    const stream = fs.createReadStream(filePath);
+    const stream = fs.createReadStream(safePath);
+    stream.on('error', (streamErr) => {
+      console.error('Error de lectura en archivo:', streamErr.message);
+      if (!res.headersSent) {
+        res.writeHead(500, { 'Content-Type': 'text/plain; charset=UTF-8' });
+        res.end('500 Internal Server Error');
+      }
+    });
     stream.pipe(res);
   });
 });
