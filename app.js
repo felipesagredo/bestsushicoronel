@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "badge": "1 EMPANADA",
         "popular": false,
         "description": "Base de Queso Mantecoso derretido + 1 Proteína + 1 Vegetal + Salsa casera a elección.",
-        "image": "assets/promo_empanadas_ig.png",
+        "image": "assets/promo_empanada_1x.png",
         "customizable": true,
         "units_count": 1,
         "unit_label": "Empanada",
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "badge": "PROMO 2X",
         "popular": true,
         "description": "2 Empanadas. Elige el relleno de cada empanada de forma independiente.",
-        "image": "assets/promo_empanadas_ig.png",
+        "image": "assets/promo_empanada_2x.png",
         "customizable": true,
         "units_count": 2,
         "unit_label": "Empanada",
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "badge": "PROMO 3X",
         "popular": false,
         "description": "3 Empanadas fritas al instante. Arma cada empanada a tu gusto.",
-        "image": "assets/promo_empanadas_ig.png",
+        "image": "assets/promo_empanada_3x.png",
         "customizable": true,
         "units_count": 3,
         "unit_label": "Empanada",
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "badge": "PACK FAMILIAR 5X",
         "popular": true,
         "description": "¡Mega Pack 5 Empanadas! Personaliza las 5 empanadas una por una.",
-        "image": "assets/promo_empanadas_ig.png",
+        "image": "assets/promo_empanada_3x.png",
         "customizable": true,
         "units_count": 5,
         "unit_label": "Empanada",
@@ -449,7 +449,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Tab Selector Bar for Compact View
       const tabsBar = document.createElement('div');
       tabsBar.className = 'unit-tabs-bar';
-      tabsBar.style.cssText = 'display: flex; gap: 8px; margin-bottom: 1.2rem; overflow-x: auto; padding-bottom: 4px; border-bottom: 1px solid var(--border-subtle);';
+      tabsBar.style.cssText = 'display: flex; gap: 4px; margin-bottom: 1.5rem; overflow-x: auto; padding: 4px; background: #edf2f7; border-radius: 12px;';
 
       const unitContainers = [];
 
@@ -460,7 +460,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const tabBtn = document.createElement('button');
         tabBtn.type = 'button';
         tabBtn.className = `unit-tab-btn ${u === 1 ? 'active' : ''}`;
-        tabBtn.style.cssText = `flex: 1; padding: 0.65rem 0.8rem; border-radius: 10px; border: 1px solid ${u === 1 ? 'var(--gold-primary)' : 'var(--border-subtle)'}; background: ${u === 1 ? 'rgba(212,175,55,0.18)' : 'rgba(255,255,255,0.03)'}; color: ${u === 1 ? 'var(--gold-light)' : 'var(--text-secondary)'}; font-weight: 700; cursor: pointer; white-space: nowrap; font-size: 0.88rem; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 6px;`;
+        tabBtn.style.cssText = `flex: 1; padding: 0.65rem 0.8rem; border-radius: 9px; border: none; background: ${u === 1 ? '#ffffff' : 'transparent'}; color: ${u === 1 ? 'var(--red-accent)' : 'var(--text-secondary)'}; font-weight: ${u === 1 ? '700' : '600'}; cursor: pointer; white-space: nowrap; font-size: 0.88rem; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: ${u === 1 ? '0 2px 6px rgba(0,0,0,0.06)' : 'none'};`;
         tabBtn.innerHTML = `<i class="fas fa-utensils"></i> ${unitLabel} #${u}`;
 
         tabsBar.appendChild(tabBtn);
@@ -468,7 +468,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Unit Container Box
         const unitBox = document.createElement('div');
         unitBox.className = 'unit-customizer-box';
-        unitBox.style.cssText = `background: rgba(255,255,255,0.03); border: 1px solid var(--border-gold); border-radius: 14px; padding: 1.2rem; margin-bottom: 1.5rem; display: ${u === 1 ? 'block' : 'none'};`;
+        unitBox.style.cssText = `background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02); display: ${u === 1 ? 'block' : 'none'};`;
 
         unitContainers.push({ u, tabBtn, unitBox });
 
@@ -476,9 +476,10 @@ document.addEventListener('DOMContentLoaded', () => {
           unitContainers.forEach(uc => {
             const isActive = uc.u === u;
             uc.unitBox.style.display = isActive ? 'block' : 'none';
-            uc.tabBtn.style.borderColor = isActive ? 'var(--gold-primary)' : 'var(--border-subtle)';
-            uc.tabBtn.style.background = isActive ? 'rgba(212,175,55,0.18)' : 'rgba(255,255,255,0.03)';
-            uc.tabBtn.style.color = isActive ? 'var(--gold-light)' : 'var(--text-secondary)';
+            uc.tabBtn.style.background = isActive ? '#ffffff' : 'transparent';
+            uc.tabBtn.style.color = isActive ? 'var(--red-accent)' : 'var(--text-secondary)';
+            uc.tabBtn.style.boxShadow = isActive ? '0 2px 6px rgba(0,0,0,0.06)' : 'none';
+            uc.tabBtn.style.fontWeight = isActive ? '700' : '600';
           });
         });
 
@@ -489,9 +490,22 @@ document.addEventListener('DOMContentLoaded', () => {
           const groupDiv = document.createElement('div');
           groupDiv.className = 'option-group';
 
+          let imgHTML = '';
+          const keyLower = optKey.toLowerCase();
+          if (keyLower.includes('envoltura') || keyLower.includes('cobertura') || keyLower.includes('wrap')) {
+            imgHTML = `<img src="assets/wrap_reference.png" class="option-group-img" alt="${optGroup.title}">`;
+          } else if (keyLower.includes('protein')) {
+            imgHTML = `<img src="assets/protein_reference.png" class="option-group-img" alt="${optGroup.title}">`;
+          } else if (keyLower.includes('agregado') || keyLower.includes('verdur') || keyLower.includes('vegetal') || keyLower.includes('fill')) {
+            imgHTML = `<img src="assets/veggies_reference.png" class="option-group-img" alt="${optGroup.title}">`;
+          }
+
           groupDiv.innerHTML = `
             <div class="option-group-title" style="font-size:0.85rem;">${optGroup.title} (Máx: ${optGroup.limit})</div>
-            <div class="options-list"></div>
+            <div class="option-group-content">
+              ${imgHTML}
+              <div class="options-list" style="flex: 1; min-width: 200px;"></div>
+            </div>
           `;
 
           const listDiv = groupDiv.querySelector('.options-list');
@@ -526,9 +540,22 @@ document.addEventListener('DOMContentLoaded', () => {
           const groupDiv = document.createElement('div');
           groupDiv.className = 'option-group';
 
+          let imgHTML = '';
+          const keyLower = optKey.toLowerCase();
+          if (keyLower.includes('envoltura') || keyLower.includes('cobertura') || keyLower.includes('wrap')) {
+            imgHTML = `<img src="assets/wrap_reference.png" class="option-group-img" alt="${optGroup.title}">`;
+          } else if (keyLower.includes('protein')) {
+            imgHTML = `<img src="assets/protein_reference.png" class="option-group-img" alt="${optGroup.title}">`;
+          } else if (keyLower.includes('agregado') || keyLower.includes('verdur') || keyLower.includes('vegetal') || keyLower.includes('fill')) {
+            imgHTML = `<img src="assets/veggies_reference.png" class="option-group-img" alt="${optGroup.title}">`;
+          }
+
           groupDiv.innerHTML = `
             <div class="option-group-title">${optGroup.title} (Máx: ${optGroup.limit})</div>
-            <div class="options-list"></div>
+            <div class="option-group-content">
+              ${imgHTML}
+              <div class="options-list" style="flex: 1; min-width: 200px;"></div>
+            </div>
           `;
 
           const listDiv = groupDiv.querySelector('.options-list');
@@ -559,9 +586,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const groupDiv = document.createElement('div');
         groupDiv.className = 'option-group';
 
+        let imgHTML = '';
+        const keyLower = optKey.toLowerCase();
+        if (keyLower.includes('envoltura') || keyLower.includes('cobertura') || keyLower.includes('wrap')) {
+          imgHTML = `<img src="assets/wrap_reference.png" class="option-group-img" alt="${optGroup.title}">`;
+        } else if (keyLower.includes('protein')) {
+          imgHTML = `<img src="assets/protein_reference.png" class="option-group-img" alt="${optGroup.title}">`;
+        } else if (keyLower.includes('agregado') || keyLower.includes('verdur') || keyLower.includes('vegetal') || keyLower.includes('fill')) {
+          imgHTML = `<img src="assets/veggies_reference.png" class="option-group-img" alt="${optGroup.title}">`;
+        }
+
         groupDiv.innerHTML = `
           <div class="option-group-title">${optGroup.title} (Máx: ${optGroup.limit})</div>
-          <div class="options-list"></div>
+          <div class="option-group-content">
+            ${imgHTML}
+            <div class="options-list" style="flex: 1; min-width: 200px;"></div>
+          </div>
         `;
 
         const listDiv = groupDiv.querySelector('.options-list');
@@ -586,8 +626,8 @@ document.addEventListener('DOMContentLoaded', () => {
     configuratorSection.style.display = 'block';
     updateLiveSummary();
 
-    // Custom smooth scroll that starts slower over promotions and accelerates to the configurator
-    customAcceleratedScrollTo(configuratorSection, 1200);
+    // Scroll smoothly and quickly to the configurator
+    configuratorSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   function updateLiveSummary() {
@@ -905,8 +945,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cart.forEach((item, idx) => {
       text += `${idx + 1}. *${item.title}* (x${item.quantity})\n`;
-      text += `   - Opciones: ${item.details}\n`;
-      text += `   - Subtotal: $${(item.price * item.quantity).toLocaleString('es-CL')}\n\n`;
+      if (item.details && item.details !== 'Opción estándar' && item.details !== 'Personalizado') {
+        const formattedDetails = item.details.split(' | ').join('\n     • ');
+        text += `   - Opciones:\n     • ${formattedDetails}\n`;
+      } else {
+        text += `   - Opciones: Opción estándar\n`;
+      }
+      text += `   - Subtotal: $${(item.price * item.quantity).toLocaleString('es-CL')}\n`;
     });
 
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
@@ -919,11 +964,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Update WhatsApp link href dynamically whenever cart changes
   function updateWhatsAppLink() {
-    if (!checkoutWhatsappBtn) return;
     if (cart.length > 0) {
-      checkoutWhatsappBtn.href = buildWhatsAppUrl();
+      const orderUrl = buildWhatsAppUrl();
+      if (checkoutWhatsappBtn) checkoutWhatsappBtn.href = orderUrl;
+      if (floatingWhatsapp) {
+        floatingWhatsapp.href = orderUrl;
+        floatingWhatsapp.style.display = 'flex';
+      }
+      if (heroWhatsappBtn) {
+        heroWhatsappBtn.href = orderUrl;
+        heroWhatsappBtn.target = '_blank';
+      }
     } else {
-      checkoutWhatsappBtn.href = '#';
+      if (checkoutWhatsappBtn) checkoutWhatsappBtn.href = '#';
+      if (floatingWhatsapp) {
+        floatingWhatsapp.style.display = 'none';
+      }
+      if (heroWhatsappBtn) {
+        heroWhatsappBtn.href = '#menu';
+        heroWhatsappBtn.target = '_self';
+      }
     }
   }
 
