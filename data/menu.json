@@ -65,8 +65,7 @@
           "limit": 1,
           "choices": [
             "Pollo",
-            "Camarón",
-            "Jamón"
+            "Camarón"
           ]
         },
         "agregados": {
@@ -119,8 +118,7 @@
           "limit": 1,
           "choices": [
             "Pollo",
-            "Camarón",
-            "Jamón"
+            "Camarón"
           ]
         },
         "agregados": {
@@ -290,7 +288,6 @@
           "limit": 1,
           "choices": [
             "Pollo",
-            "Jamón",
             "Machas",
             "Camarón"
           ]
@@ -299,10 +296,10 @@
           "title": "Vegetal",
           "limit": 1,
           "choices": [
-            "Palta",
             "Cebollín",
             "Morrón",
-            "Champiñón"
+            "Champiñón",
+            "Choclo"
           ]
         },
         "salsa": {
@@ -335,7 +332,6 @@
           "limit": 1,
           "choices": [
             "Pollo",
-            "Jamón",
             "Machas",
             "Camarón"
           ]
@@ -344,10 +340,10 @@
           "title": "Vegetal",
           "limit": 1,
           "choices": [
-            "Palta",
             "Cebollín",
             "Morrón",
-            "Champiñón"
+            "Champiñón",
+            "Choclo"
           ]
         },
         "salsa": {
@@ -380,7 +376,6 @@
           "limit": 1,
           "choices": [
             "Pollo",
-            "Jamón",
             "Machas",
             "Camarón"
           ]
@@ -389,10 +384,10 @@
           "title": "Vegetal",
           "limit": 1,
           "choices": [
-            "Palta",
             "Cebollín",
             "Morrón",
-            "Champiñón"
+            "Champiñón",
+            "Choclo"
           ]
         },
         "salsa": {
@@ -425,7 +420,6 @@
           "limit": 1,
           "choices": [
             "Pollo",
-            "Jamón",
             "Machas",
             "Camarón"
           ]
@@ -434,10 +428,10 @@
           "title": "Vegetal",
           "limit": 1,
           "choices": [
-            "Palta",
             "Cebollín",
             "Morrón",
-            "Champiñón"
+            "Champiñón",
+            "Choclo"
           ]
         },
         "salsa": {
@@ -489,9 +483,8 @@
           "title": "Empanada Incluida",
           "limit": 1,
           "choices": [
-            "Pollo + Queso",
-            "Jamón + Queso",
-            "Camarón + Queso"
+            "Pollo + Queso Mantecoso",
+            "Camarón + Queso Mantecoso"
           ]
         },
         "salsas": {

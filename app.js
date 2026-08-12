@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "unit_label": "Roll",
         "per_unit_options": {
           "envoltura": { "title": "Envoltura", "limit": 1, "choices": ["Palta", "Tempura Crispy", "Sésamo"] },
-          "proteina": { "title": "Proteína", "limit": 1, "choices": ["Pollo", "Camarón", "Jamón"] },
+          "proteina": { "title": "Proteína", "limit": 1, "choices": ["Pollo", "Camarón"] },
           "agregados": { "title": "Verduras / Agregados (Queso crema incluido ✨)", "limit": 2, "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"] }
         },
         "general_options": {
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "unit_label": "Roll",
         "per_unit_options": {
           "envoltura": { "title": "Envoltura", "limit": 1, "choices": ["Palta", "Tempura Crispy", "Sésamo"] },
-          "proteina": { "title": "Proteína", "limit": 1, "choices": ["Pollo", "Camarón", "Jamón"] },
+          "proteina": { "title": "Proteína", "limit": 1, "choices": ["Pollo", "Camarón"] },
           "agregados": { "title": "Verduras / Agregados (Queso crema incluido ✨)", "limit": 2, "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"] }
         },
         "general_options": {
@@ -141,8 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "units_count": 1,
         "unit_label": "Empanada",
         "per_unit_options": {
-          "proteina": { "title": "Proteína", "limit": 1, "choices": ["Pollo", "Jamón", "Machas", "Camarón"] },
-          "vegetal": { "title": "Vegetal", "limit": 1, "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"] },
+          "proteina": { "title": "Proteína", "limit": 1, "choices": ["Pollo", "Machas", "Camarón"] },
+          "vegetal": { "title": "Vegetal", "limit": 1, "choices": ["Cebollín", "Morrón", "Champiñón", "Choclo"] },
           "salsa": { "title": "Salsa Casera", "limit": 1, "choices": ["Pebre Casero", "Ají Casero", "Cilantro Casero"] }
         }
       },
@@ -160,8 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "units_count": 2,
         "unit_label": "Empanada",
         "per_unit_options": {
-          "proteina": { "title": "Proteína", "limit": 1, "choices": ["Pollo", "Jamón", "Machas", "Camarón"] },
-          "vegetal": { "title": "Vegetal", "limit": 1, "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"] },
+          "proteina": { "title": "Proteína", "limit": 1, "choices": ["Pollo", "Machas", "Camarón"] },
+          "vegetal": { "title": "Vegetal", "limit": 1, "choices": ["Cebollín", "Morrón", "Champiñón", "Choclo"] },
           "salsa": { "title": "Salsa Casera", "limit": 1, "choices": ["Pebre Casero", "Ají Casero", "Cilantro Casero"] }
         }
       },
@@ -179,8 +179,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "units_count": 3,
         "unit_label": "Empanada",
         "per_unit_options": {
-          "proteina": { "title": "Proteína", "limit": 1, "choices": ["Pollo", "Jamón", "Machas", "Camarón"] },
-          "vegetal": { "title": "Vegetal", "limit": 1, "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"] },
+          "proteina": { "title": "Proteína", "limit": 1, "choices": ["Pollo", "Machas", "Camarón"] },
+          "vegetal": { "title": "Vegetal", "limit": 1, "choices": ["Cebollín", "Morrón", "Champiñón", "Choclo"] },
           "salsa": { "title": "Salsa Casera", "limit": 1, "choices": ["Pebre Casero", "Ají Casero", "Cilantro Casero"] }
         }
       },
@@ -198,8 +198,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "units_count": 5,
         "unit_label": "Empanada",
         "per_unit_options": {
-          "proteina": { "title": "Proteína", "limit": 1, "choices": ["Pollo", "Jamón", "Machas", "Camarón"] },
-          "vegetal": { "title": "Vegetal", "limit": 1, "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"] },
+          "proteina": { "title": "Proteína", "limit": 1, "choices": ["Pollo", "Machas", "Camarón"] },
+          "vegetal": { "title": "Vegetal", "limit": 1, "choices": ["Cebollín", "Morrón", "Champiñón", "Choclo"] },
           "salsa": { "title": "Salsa Casera", "limit": 1, "choices": ["Pebre Casero", "Ají Casero", "Cilantro Casero"] }
         }
       },
@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "verduras": { "title": "Verduras Handroll", "limit": 2, "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"] }
         },
         "general_options": {
-          "empanada_relleno": { "title": "Empanada Incluida", "limit": 1, "choices": ["Pollo + Queso", "Jamón + Queso", "Camarón + Queso"] },
+          "empanada_relleno": { "title": "Empanada Incluida", "limit": 1, "choices": ["Pollo + Queso Mantecoso", "Camarón + Queso Mantecoso"] },
           "salsas": { "title": "Salsas Incluidas", "limit": 2, "choices": ["Salsa Soya", "Teriyaki", "Pebre Casero", "Ají Casero"] }
         }
       },
@@ -287,6 +287,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const cartTotalAmount = document.getElementById('cart-total-amount');
   const cartCountEl = document.getElementById('cart-count');
   const checkoutWhatsappBtn = document.getElementById('checkout-whatsapp-btn');
+  const cartDeliveryMethod = document.getElementById('cart-delivery-method');
+  const cartDeliveryTime = document.getElementById('cart-delivery-time');
+  
+  // Card Modal Elements
+  const openCardModalNav = document.getElementById('open-card-modal-nav');
+  const cardModalOverlay = document.getElementById('card-modal-overlay');
+  const cardModalClose = document.getElementById('card-modal-close');
 
   // On-Page Configurator Section Elements
   const configuratorSection = document.getElementById('configurador-section');
@@ -430,12 +437,57 @@ document.addEventListener('DOMContentLoaded', () => {
   // Interactive On-Page Configurator Logic
   let selectedUnitOptions = {};
   let selectedGeneralOptions = {};
+  let selectedUnitExclusions = {};
+  let selectedItemExclusions = [];
+  let selectedUnitTouches = {};
+  let selectedItemTouches = [];
+  let selectedExtras = [];
+
+  const EXTRAS_GLOBALES = {
+    "Proteínas": [
+      { id: "extra-pollo", name: "Extra Pollo", price: 1000 },
+      { id: "extra-camaron", name: "Extra Camarón", price: 1200 },
+      { id: "extra-machas", name: "Extra Machas", price: 1200 }
+    ],
+    "Verduras": [
+      { id: "extra-palta", name: "Extra Palta", price: 800 },
+      { id: "extra-cebollin", name: "Extra Cebollín", price: 500 },
+      { id: "extra-morron", name: "Extra Morrón", price: 500 },
+      { id: "extra-champinon", name: "Extra Champiñón", price: 500 },
+      { id: "extra-choclo", name: "Extra Choclo", price: 500 }
+    ],
+    "Salsas y Queso": [
+      { id: "extra-queso-crema", name: "Extra Queso crema", price: 800 },
+      { id: "extra-queso-mantecoso", name: "Extra Queso Mantecoso", price: 800 }
+    ]
+  };
+
+  const CONFIGURACION_PERSONALIZACION = {
+    sushi: {
+      exclusions: ["Queso crema", "Sésamo", "Cebollín", "Palta"]
+    },
+    handrolls: {
+      exclusions: ["Queso crema", "Cebollín", "Palta"]
+    },
+    empanadas: {
+      exclusions: ["Queso mantecoso", "Cebollín", "Morrón", "Champiñón"],
+      touches: ["Toque de cilantro", "Toque de pimienta", "Toque de orégano"]
+    },
+    combos: {
+      exclusions: ["Queso crema", "Sésamo", "Cebollín", "Palta"]
+    }
+  };
 
   function openConfiguratorSection(item) {
     activeCustomizingItem = item;
     selectedOptions = {};
     selectedUnitOptions = {};
     selectedGeneralOptions = {};
+    selectedUnitExclusions = {};
+    selectedItemExclusions = [];
+    selectedUnitTouches = {};
+    selectedItemTouches = [];
+    selectedExtras = [];
 
     configuratorTitle.textContent = item.title;
     configuratorPrice.textContent = item.price_display;
@@ -525,6 +577,79 @@ document.addEventListener('DOMContentLoaded', () => {
 
           unitBox.appendChild(groupDiv);
         });
+
+        // Exclusion chips group for this unit
+        selectedUnitExclusions[u] = [];
+
+        const catConfig = CONFIGURACION_PERSONALIZACION[item.category];
+        if (catConfig && catConfig.exclusions && catConfig.exclusions.length > 0) {
+          const exclGroupDiv = document.createElement('div');
+          exclGroupDiv.className = 'exclusion-group';
+          exclGroupDiv.style.cssText = 'margin-top: 1rem; border-top: 1px dashed #e2e8f0; padding-top: 0.75rem;';
+          exclGroupDiv.innerHTML = `
+            <div class="option-group-title" style="font-size:0.85rem; color: var(--red-accent);"><i class="fas fa-ban"></i> ¿Quitar algún ingrediente base de este/a ${unitLabel}? (Opcional)</div>
+            <div class="exclusion-chips-list" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.5rem;"></div>
+          `;
+          const chipsList = exclGroupDiv.querySelector('.exclusion-chips-list');
+
+          catConfig.exclusions.forEach(excl => {
+            const chip = document.createElement('button');
+            chip.type = 'button';
+            chip.className = 'exclusion-chip';
+            chip.innerHTML = `<i class="far fa-circle"></i> Sin ${excl}`;
+            chip.addEventListener('click', () => {
+              const index = selectedUnitExclusions[u].indexOf(excl);
+              if (index > -1) {
+                selectedUnitExclusions[u].splice(index, 1);
+                chip.classList.remove('active');
+                chip.innerHTML = `<i class="far fa-circle"></i> Sin ${excl}`;
+              } else {
+                selectedUnitExclusions[u].push(excl);
+                chip.classList.add('active');
+                chip.innerHTML = `<i class="fas fa-check-circle"></i> Sin ${excl}`;
+              }
+              updateLiveSummary();
+            });
+            chipsList.appendChild(chip);
+          });
+
+          unitBox.appendChild(exclGroupDiv);
+        }
+
+        // Touches chips group for this unit
+        selectedUnitTouches[u] = [];
+        if (catConfig && catConfig.touches && catConfig.touches.length > 0) {
+          const touchesGroupDiv = document.createElement('div');
+          touchesGroupDiv.className = 'touches-group';
+          touchesGroupDiv.style.cssText = 'margin-top: 1rem; border-top: 1px dashed #e2e8f0; padding-top: 0.75rem;';
+          touchesGroupDiv.innerHTML = `
+            <div class="option-group-title" style="font-size:0.85rem; color: var(--gold-primary); border-left-color: var(--gold-primary);"><i class="fas fa-magic"></i> ¿Añadir algún toque especial? (Opcional - Gratis)</div>
+            <div class="touches-chips-list" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.5rem;"></div>
+          `;
+          const chipsList = touchesGroupDiv.querySelector('.touches-chips-list');
+
+          catConfig.touches.forEach(touch => {
+            const chip = document.createElement('button');
+            chip.type = 'button';
+            chip.className = 'touch-chip';
+            chip.innerHTML = `<i class="far fa-circle"></i> ${touch}`;
+            chip.addEventListener('click', () => {
+              const index = selectedUnitTouches[u].indexOf(touch);
+              if (index > -1) {
+                selectedUnitTouches[u].splice(index, 1);
+                chip.classList.remove('active');
+                chip.innerHTML = `<i class="far fa-circle"></i> ${touch}`;
+              } else {
+                selectedUnitTouches[u].push(touch);
+                chip.classList.add('active');
+                chip.innerHTML = `<i class="fas fa-check-circle"></i> ${touch}`;
+              }
+              updateLiveSummary();
+            });
+            chipsList.appendChild(chip);
+          });
+          unitBox.appendChild(touchesGroupDiv);
+        }
 
         configuratorBody.appendChild(unitBox);
       }
@@ -621,6 +746,129 @@ document.addEventListener('DOMContentLoaded', () => {
 
         configuratorBody.appendChild(groupDiv);
       });
+
+      // Exclusion chips group for single customized item
+      selectedItemExclusions = [];
+      const catConfig = CONFIGURACION_PERSONALIZACION[item.category];
+      if (catConfig && catConfig.exclusions && catConfig.exclusions.length > 0) {
+        const exclGroupDiv = document.createElement('div');
+        exclGroupDiv.className = 'exclusion-group';
+        exclGroupDiv.style.cssText = 'margin-top: 1.5rem; border-top: 1px dashed #e2e8f0; padding-top: 1rem;';
+        exclGroupDiv.innerHTML = `
+          <div class="option-group-title" style="color: var(--red-accent);"><i class="fas fa-ban"></i> ¿Quitar algún ingrediente base? (Opcional)</div>
+          <div class="exclusion-chips-list" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.5rem;"></div>
+        `;
+        const chipsList = exclGroupDiv.querySelector('.exclusion-chips-list');
+
+        catConfig.exclusions.forEach(excl => {
+          const chip = document.createElement('button');
+          chip.type = 'button';
+          chip.className = 'exclusion-chip';
+          chip.innerHTML = `<i class="far fa-circle"></i> Sin ${excl}`;
+          chip.addEventListener('click', () => {
+            const index = selectedItemExclusions.indexOf(excl);
+            if (index > -1) {
+              selectedItemExclusions.splice(index, 1);
+              chip.classList.remove('active');
+              chip.innerHTML = `<i class="far fa-circle"></i> Sin ${excl}`;
+            } else {
+              selectedItemExclusions.push(excl);
+              chip.classList.add('active');
+              chip.innerHTML = `<i class="fas fa-check-circle"></i> Sin ${excl}`;
+            }
+            updateLiveSummary();
+          });
+          chipsList.appendChild(chip);
+        });
+        configuratorBody.appendChild(exclGroupDiv);
+      }
+
+      // Touches chips group for single customized item
+      selectedItemTouches = [];
+      if (catConfig && catConfig.touches && catConfig.touches.length > 0) {
+        const touchesGroupDiv = document.createElement('div');
+        touchesGroupDiv.className = 'touches-group';
+        touchesGroupDiv.style.cssText = 'margin-top: 1.5rem; border-top: 1px dashed #e2e8f0; padding-top: 1rem;';
+        touchesGroupDiv.innerHTML = `
+          <div class="option-group-title" style="color: var(--gold-primary); border-left-color: var(--gold-primary);"><i class="fas fa-magic"></i> ¿Añadir algún toque especial? (Opcional - Gratis)</div>
+          <div class="touches-chips-list" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.5rem;"></div>
+        `;
+        const chipsList = touchesGroupDiv.querySelector('.touches-chips-list');
+
+        catConfig.touches.forEach(touch => {
+          const chip = document.createElement('button');
+          chip.type = 'button';
+          chip.className = 'touch-chip';
+          chip.innerHTML = `<i class="far fa-circle"></i> ${touch}`;
+          chip.addEventListener('click', () => {
+            const index = selectedItemTouches.indexOf(touch);
+            if (index > -1) {
+              selectedItemTouches.splice(index, 1);
+              chip.classList.remove('active');
+              chip.innerHTML = `<i class="far fa-circle"></i> ${touch}`;
+            } else {
+              selectedItemTouches.push(touch);
+              chip.classList.add('active');
+              chip.innerHTML = `<i class="fas fa-check-circle"></i> ${touch}`;
+            }
+            updateLiveSummary();
+          });
+          chipsList.appendChild(chip);
+        });
+        configuratorBody.appendChild(touchesGroupDiv);
+      }
+    }
+
+    // Render general extras from global list (applicable to all customizable items)
+    if (EXTRAS_GLOBALES) {
+      const extrasGroupDiv = document.createElement('div');
+      extrasGroupDiv.className = 'extras-group';
+      extrasGroupDiv.style.cssText = 'margin-top: 1.5rem; border-top: 1px dashed #e2e8f0; padding-top: 1rem;';
+      extrasGroupDiv.innerHTML = `
+        <div class="option-group-title" style="color: var(--gold-primary);"><i class="fas fa-plus-circle"></i> ¿Deseas agregar algún ingrediente extra? (Opcional)</div>
+        <div class="extras-categories-container" style="display: flex; flex-direction: column; gap: 1rem; margin-top: 0.85rem;"></div>
+      `;
+      const categoriesContainer = extrasGroupDiv.querySelector('.extras-categories-container');
+
+      Object.keys(EXTRAS_GLOBALES).forEach(extraCat => {
+        const catList = EXTRAS_GLOBALES[extraCat];
+        if (catList && catList.length > 0) {
+          const catDiv = document.createElement('div');
+          catDiv.className = 'extra-subcategory';
+          catDiv.innerHTML = `
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.3px;">${extraCat}</div>
+            <div class="extras-chips-list" style="display: flex; flex-wrap: wrap; gap: 8px;"></div>
+          `;
+          const chipsList = catDiv.querySelector('.extras-chips-list');
+
+          catList.forEach(extra => {
+            // Exclude cheese that doesn't match the category type
+            if (item.category === 'empanadas' && extra.id === 'extra-queso-crema') return;
+            if (item.category !== 'empanadas' && extra.id === 'extra-queso-mantecoso') return;
+
+            const chip = document.createElement('button');
+            chip.type = 'button';
+            chip.className = 'extra-chip';
+            chip.innerHTML = `<i class="far fa-circle"></i> ${extra.name} (+$${extra.price.toLocaleString('es-CL')})`;
+            chip.addEventListener('click', () => {
+              const index = selectedExtras.findIndex(e => e.id === extra.id);
+              if (index > -1) {
+                selectedExtras.splice(index, 1);
+                chip.classList.remove('active');
+                chip.innerHTML = `<i class="far fa-circle"></i> ${extra.name} (+$${extra.price.toLocaleString('es-CL')})`;
+              } else {
+                selectedExtras.push(extra);
+                chip.classList.add('active');
+                chip.innerHTML = `<i class="fas fa-check-circle"></i> ${extra.name} (+$${extra.price.toLocaleString('es-CL')})`;
+              }
+              updateLiveSummary();
+            });
+            chipsList.appendChild(chip);
+          });
+          categoriesContainer.appendChild(catDiv);
+        }
+      });
+      configuratorBody.appendChild(extrasGroupDiv);
     }
 
     configuratorSection.style.display = 'block';
@@ -646,7 +894,22 @@ document.addEventListener('DOMContentLoaded', () => {
             uChoices.push(uOpts[k].join(', '));
           }
         });
-        const uStr = uChoices.length > 0 ? uChoices.join(', ') : 'Sin seleccionar';
+        let uStr = uChoices.length > 0 ? uChoices.join(', ') : 'Sin seleccionar';
+        
+        // Append exclusions for this unit
+        const uExcl = selectedUnitExclusions[u] || [];
+        if (uExcl.length > 0) {
+          const exclFormatted = uExcl.map(x => `sin ${x.toLowerCase()}`).join(', ');
+          uStr += ` (${exclFormatted})`;
+        }
+        
+        // Append touches for this unit
+        const uTouch = selectedUnitTouches[u] || [];
+        if (uTouch.length > 0) {
+          const touchFormatted = uTouch.join(', ');
+          uStr += ` [${touchFormatted}]`;
+        }
+        
         detailsArr.push(`${unitLabel} #${u}: [${uStr}]`);
       }
     } else {
@@ -655,7 +918,28 @@ document.addEventListener('DOMContentLoaded', () => {
           detailsArr.push(selectedOptions[k].join(', '));
         }
       });
+      // Append exclusions for single item
+      if (selectedItemExclusions && selectedItemExclusions.length > 0) {
+        const exclFormatted = selectedItemExclusions.map(x => `sin ${x.toLowerCase()}`).join(', ');
+        detailsArr.push(`(${exclFormatted})`);
+      }
+      // Append touches for single item
+      if (selectedItemTouches && selectedItemTouches.length > 0) {
+        const touchFormatted = selectedItemTouches.join(', ');
+        detailsArr.push(`[${touchFormatted}]`);
+      }
     }
+
+    // Append general extras to summary
+    if (selectedExtras && selectedExtras.length > 0) {
+      const extrasFormatted = selectedExtras.map(e => `+${e.name}`).join(', ');
+      detailsArr.push(`Extras: [${extrasFormatted}]`);
+    }
+
+    // Recalculate price in live preview
+    let extrasTotal = selectedExtras.reduce((sum, e) => sum + e.price, 0);
+    const totalPrice = activeCustomizingItem.price + extrasTotal;
+    configuratorPrice.textContent = `$${totalPrice.toLocaleString('es-CL')}`;
 
     configuratorSummaryText.textContent = detailsArr.length > 0 ? detailsArr.join(' | ') : 'Selecciona tus ingredientes en los pasos superiores...';
   }
@@ -760,7 +1044,22 @@ document.addEventListener('DOMContentLoaded', () => {
               uChoices.push(uOpts[k].join(', '));
             }
           });
-          const uStr = uChoices.length > 0 ? uChoices.join(', ') : 'Estándar';
+          let uStr = uChoices.length > 0 ? uChoices.join(', ') : 'Estándar';
+          
+          // Append exclusions for this unit
+          const uExcl = selectedUnitExclusions[u] || [];
+          if (uExcl.length > 0) {
+            const exclFormatted = uExcl.map(x => `sin ${x.toLowerCase()}`).join(', ');
+            uStr += ` (${exclFormatted})`;
+          }
+          
+          // Append touches for this unit
+          const uTouch = selectedUnitTouches[u] || [];
+          if (uTouch.length > 0) {
+            const touchFormatted = uTouch.join(', ');
+            uStr += ` [${touchFormatted}]`;
+          }
+          
           detailsArr.push(`${unitLabel} #${u}: ${uStr}`);
         }
 
@@ -773,20 +1072,54 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
       } else {
+        let itemOptsStr = '';
+        let optsArr = [];
         Object.keys(selectedOptions).forEach(k => {
           if (selectedOptions[k].length > 0) {
-            detailsArr.push(selectedOptions[k].join(', '));
+            optsArr.push(selectedOptions[k].join(', '));
           }
         });
+        itemOptsStr = optsArr.join(' | ');
+
+        // Append exclusions for single item
+        if (selectedItemExclusions && selectedItemExclusions.length > 0) {
+          const exclFormatted = selectedItemExclusions.map(x => `sin ${x.toLowerCase()}`).join(', ');
+          if (itemOptsStr) {
+            itemOptsStr += ` (${exclFormatted})`;
+          } else {
+            itemOptsStr = `(${exclFormatted})`;
+          }
+        }
+        // Append touches for single item
+        if (selectedItemTouches && selectedItemTouches.length > 0) {
+          const touchFormatted = selectedItemTouches.join(', ');
+          if (itemOptsStr) {
+            itemOptsStr += ` [${touchFormatted}]`;
+          } else {
+            itemOptsStr = `[${touchFormatted}]`;
+          }
+        }
+        if (itemOptsStr) {
+          detailsArr.push(itemOptsStr);
+        }
+      }
+
+      // Append general extras to cart details
+      if (selectedExtras && selectedExtras.length > 0) {
+        const extrasFormatted = selectedExtras.map(e => `+${e.name}`).join(', ');
+        detailsArr.push(`Extras: ${extrasFormatted}`);
       }
 
       const detailsStr = detailsArr.length > 0 ? detailsArr.join(' | ') : 'Personalizado';
+
+      let extrasTotal = selectedExtras.reduce((sum, e) => sum + e.price, 0);
+      const finalPrice = activeCustomizingItem.price + extrasTotal;
 
       addToCart({
         id: activeCustomizingItem.id + '-' + Date.now(),
         productId: activeCustomizingItem.id,
         title: activeCustomizingItem.title,
-        price: activeCustomizingItem.price,
+        price: finalPrice,
         details: detailsStr,
         quantity: 1
       });
@@ -800,6 +1133,11 @@ document.addEventListener('DOMContentLoaded', () => {
     btnCloseConfigurator.addEventListener('click', () => {
       configuratorSection.style.display = 'none';
       activeCustomizingItem = null;
+      
+      const menuSection = document.getElementById('menu');
+      if (menuSection) {
+        menuSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
   }
 
@@ -946,7 +1284,10 @@ document.addEventListener('DOMContentLoaded', () => {
     cart.forEach((item, idx) => {
       text += `${idx + 1}. *${item.title}* (x${item.quantity})\n`;
       if (item.details && item.details !== 'Opción estándar' && item.details !== 'Personalizado') {
-        const formattedDetails = item.details.split(' | ').join('\n     • ');
+        let detailsString = item.details;
+        // Format touches to display on a new line underneath
+        detailsString = detailsString.replace(/\[([^\]]+)\]/g, '\n       ↳ Toques: $1');
+        const formattedDetails = detailsString.split(' | ').join('\n     • ');
         text += `   - Opciones:\n     • ${formattedDetails}\n`;
       } else {
         text += `   - Opciones: Opción estándar\n`;
@@ -956,7 +1297,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     text += `💰 *TOTAL A PAGAR: $${total.toLocaleString('es-CL')}*\n\n`;
-    text += `🛵 *Modalidad:* Delivery / Retiro en local\n`;
+    
+    const deliveryMethod = cartDeliveryMethod ? cartDeliveryMethod.value : 'Delivery a Domicilio';
+    const deliveryTime = cartDeliveryTime ? cartDeliveryTime.value : 'Lo antes posible';
+    
+    text += `🛵 *Modalidad:* ${deliveryMethod}\n`;
+    text += `⏰ *Horario:* ${deliveryTime}\n\n`;
     text += `Por favor confirmen mi pedido y tiempo estimado de entrega. ¡Muchas gracias! 🙏✨`;
 
     return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
@@ -997,6 +1343,43 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       // Programmatically redirect to WhatsApp URL
       window.location.href = buildWhatsAppUrl();
+    });
+  }
+
+  if (cartDeliveryMethod) {
+    cartDeliveryMethod.addEventListener('change', updateWhatsAppLink);
+    cartDeliveryMethod.addEventListener('input', updateWhatsAppLink);
+  }
+  if (cartDeliveryTime) {
+    cartDeliveryTime.addEventListener('change', updateWhatsAppLink);
+    cartDeliveryTime.addEventListener('input', updateWhatsAppLink);
+  }
+
+  const timeToggleNow = document.getElementById('time-toggle-now');
+  const timeToggleLater = document.getElementById('time-toggle-later');
+  const timeSelectWrapper = document.getElementById('time-select-wrapper');
+
+  if (timeToggleNow && timeToggleLater && timeSelectWrapper) {
+    timeToggleNow.addEventListener('click', () => {
+      timeToggleNow.classList.add('active');
+      timeToggleLater.classList.remove('active');
+      timeSelectWrapper.style.display = 'none';
+      if (cartDeliveryTime) {
+        cartDeliveryTime.value = "Lo antes posible";
+        updateWhatsAppLink();
+      }
+    });
+
+    timeToggleLater.addEventListener('click', () => {
+      timeToggleLater.classList.add('active');
+      timeToggleNow.classList.remove('active');
+      timeSelectWrapper.style.display = 'block';
+      if (cartDeliveryTime) {
+        if (cartDeliveryTime.value === "Lo antes posible") {
+          cartDeliveryTime.value = "12:00 hrs";
+        }
+        updateWhatsAppLink();
+      }
     });
   }
 

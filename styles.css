@@ -1346,3 +1346,200 @@ body {
     padding: 0.9rem;
   }
 }
+
+/* ==========================================
+   EXCLUSION CHIPS & CART SCHEDULING STYLES
+   ========================================== */
+.exclusion-chip {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.exclusion-chip:hover {
+  border-color: #cbd5e1;
+  background: #f1f5f9;
+  color: var(--text-main);
+}
+
+.exclusion-chip.active {
+  background: #fff1f2; /* Soft alert/red tint */
+  border-color: #f43f5e; /* Red border */
+  color: #e11d48; /* Red text */
+  box-shadow: 0 2px 6px rgba(244, 63, 94, 0.08);
+}
+
+.cart-order-details {
+  padding: 1.25rem 1.5rem;
+  background: #fdfdfd;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cart-detail-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.cart-detail-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cart-detail-group label i {
+  color: var(--gold-primary);
+}
+
+.cart-detail-group select {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  background-color: #ffffff;
+  transition: border-color 0.15s ease;
+  cursor: pointer;
+  outline: none;
+}
+
+.cart-detail-group select:focus {
+  border-color: var(--gold-primary);
+}
+
+.extra-chip {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.extra-chip:hover {
+  border-color: #cbd5e1;
+  background: #f1f5f9;
+  color: var(--text-main);
+}
+
+.extra-chip.active {
+  background: #fffbef; /* Soft gold tint */
+  border-color: var(--gold-primary); /* Gold border */
+  color: #b38600; /* Dark gold/amber text */
+  box-shadow: 0 2px 6px rgba(212, 175, 55, 0.08);
+}
+
+.time-toggle-container {
+  display: flex;
+  background: #edf2f7;
+  padding: 4px;
+  border-radius: 12px;
+  gap: 4px;
+}
+
+.time-toggle-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0.55rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.time-toggle-btn:hover {
+  color: var(--text-dark);
+}
+
+.time-toggle-btn.active {
+  background: #ffffff;
+  color: var(--red-accent);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.time-select-wrapper {
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+/* Custom styled select arrow */
+.time-select-wrapper::after {
+  content: '\f078';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  pointer-events: none;
+  font-size: 0.8rem;
+}
+
+.time-select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 40px !important;
+}
+
+.touch-chip {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.touch-chip:hover {
+  border-color: #cbd5e1;
+  background: #f1f5f9;
+  color: var(--text-main);
+}
+
+.touch-chip.active {
+  background: #f0fdf4; /* Soft green tint */
+  border-color: #4ade80; /* Green border */
+  color: #15803d; /* Green text */
+  box-shadow: 0 2px 6px rgba(74, 222, 128, 0.08);
+}

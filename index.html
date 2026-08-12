@@ -283,6 +283,51 @@
       <!-- Items dynamically injected -->
     </div>
 
+    <div class="cart-order-details">
+      <div class="cart-detail-group">
+        <label for="cart-delivery-method">
+          <i class="fas fa-motorcycle"></i> Modalidad de entrega:
+        </label>
+        <select id="cart-delivery-method">
+          <option value="Delivery a Domicilio">🛵 Delivery a Domicilio</option>
+          <option value="Retiro en Local">🛍️ Retiro en Local</option>
+        </select>
+      </div>
+      <div class="cart-detail-group">
+        <label><i class="far fa-clock"></i> Horario del pedido:</label>
+        <div class="time-toggle-container">
+          <button type="button" class="time-toggle-btn active" id="time-toggle-now">⚡ Para ahora</button>
+          <button type="button" class="time-toggle-btn" id="time-toggle-later">📅 Programar hora</button>
+        </div>
+        <div class="time-select-wrapper" id="time-select-wrapper" style="display: none;">
+          <select id="cart-delivery-time">
+            <option value="Lo antes posible">⚡ Lo antes posible (Para ahora)</option>
+            <option value="12:00 hrs">12:00 hrs</option>
+            <option value="12:30 hrs">12:30 hrs</option>
+            <option value="13:00 hrs">13:00 hrs</option>
+            <option value="13:30 hrs">13:30 hrs</option>
+            <option value="14:00 hrs">14:00 hrs</option>
+            <option value="14:30 hrs">14:30 hrs</option>
+            <option value="15:00 hrs">15:00 hrs</option>
+            <option value="15:30 hrs">15:30 hrs</option>
+            <option value="16:00 hrs">16:00 hrs</option>
+            <option value="16:30 hrs">16:30 hrs</option>
+            <option value="17:00 hrs">17:00 hrs</option>
+            <option value="17:30 hrs">17:30 hrs</option>
+            <option value="18:00 hrs">18:00 hrs</option>
+            <option value="18:30 hrs">18:30 hrs</option>
+            <option value="19:00 hrs">19:00 hrs</option>
+            <option value="19:30 hrs">19:30 hrs</option>
+            <option value="20:00 hrs">20:00 hrs</option>
+            <option value="20:30 hrs">20:30 hrs</option>
+            <option value="21:00 hrs">21:00 hrs</option>
+            <option value="21:30 hrs">21:30 hrs</option>
+            <option value="22:00 hrs">22:00 hrs</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
     <div class="cart-footer">
       <div class="cart-total-row">
         <span>Total:</span>
