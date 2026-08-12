@@ -419,7 +419,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <span class="product-price">${item.price_display}</span>
             <button class="btn-add-item" data-id="${item.id}">
               <i class="fas ${item.customizable ? 'fa-sliders-h' : 'fa-plus'}"></i>
-              ${item.customizable ? 'Agregar al pedido' : 'Agregar'}
+              ${item.customizable ? 'Personalizar pedido' : 'Agregar'}
             </button>
           </div>
         </div>
@@ -528,7 +528,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Tab Selector Bar for Compact View
       const tabsBar = document.createElement('div');
       tabsBar.className = 'unit-tabs-bar';
-      tabsBar.style.cssText = 'display: flex; gap: 4px; margin-bottom: 1.5rem; overflow-x: auto; padding: 4px; background: #edf2f7; border-radius: 12px;';
+      tabsBar.style.cssText = 'display: flex; gap: 4px; overflow-x: auto;';
 
       const unitContainers = [];
 

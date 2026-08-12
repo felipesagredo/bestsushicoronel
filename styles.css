@@ -1011,7 +1011,6 @@ body {
   padding: 1.75rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
   position: relative;
-  overflow: hidden;
 }
 
 .configurator-card::before {
@@ -1022,6 +1021,8 @@ body {
   right: 0;
   height: 4px;
   background: var(--red-gradient);
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
 }
 
 .configurator-header {
@@ -1542,4 +1543,18 @@ body {
   border-color: #4ade80; /* Green border */
   color: #15803d; /* Green text */
   box-shadow: 0 2px 6px rgba(74, 222, 128, 0.08);
+}
+
+.unit-tabs-bar {
+  position: sticky;
+  top: 72px; /* Floats cleanly below the main header */
+  z-index: 990;
+  background: #ffffff !important;
+  border: 1px solid #edf2f7;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 14px;
+  padding: 8px !important;
+  margin-bottom: 1.5rem;
+  will-change: transform;
+  transform: translate3d(0, 0, 0); /* Hardware GPU acceleration to prevent jiggling */
 }
