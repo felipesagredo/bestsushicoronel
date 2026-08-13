@@ -314,10 +314,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const cartDeliveryMethod = document.getElementById('cart-delivery-method');
   const cartDeliveryTime = document.getElementById('cart-delivery-time');
   
-  // Card Modal Elements
-  const openCardModalNav = document.getElementById('open-card-modal-nav');
-  const cardModalOverlay = document.getElementById('card-modal-overlay');
-  const cardModalClose = document.getElementById('card-modal-close');
 
   // On-Page Configurator Section Elements
   const configuratorSection = document.getElementById('configurador-section');
@@ -1314,27 +1310,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (cartClose) cartClose.addEventListener('click', closeCartDrawer);
   if (cartBackdrop) cartBackdrop.addEventListener('click', closeCartDrawer);
 
-  // Card Modal Handlers (Lazy QR Image loading)
-  if (openCardModalNav && cardModalOverlay) {
-    openCardModalNav.addEventListener('click', (e) => {
-      e.preventDefault();
-      const qrImg = document.getElementById('qr-modal-img');
-      if (qrImg && qrImg.dataset.src && !qrImg.src) {
-        qrImg.src = qrImg.dataset.src;
-      }
-      cardModalOverlay.classList.add('active');
-    });
-  }
-  if (cardModalClose && cardModalOverlay) {
-    cardModalClose.addEventListener('click', () => {
-      cardModalOverlay.classList.remove('active');
-    });
-    cardModalOverlay.addEventListener('click', (e) => {
-      if (e.target === cardModalOverlay) {
-        cardModalOverlay.classList.remove('active');
-      }
-    });
-  }
 
   // Build WhatsApp URL from current cart state
   function buildWhatsAppUrl() {

@@ -53,7 +53,7 @@
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#menu">Menú y Promos</a></li>
         <li><a href="#contacto">Contacto</a></li>
-        <li><a href="#" id="open-card-modal-nav" class="nav-card-link"><i class="fas fa-qrcode"></i> Tarjeta QR</a></li>
+
       </ul>
 
       <button class="cart-btn-trigger" id="cart-btn-trigger" aria-label="Ver Carrito de Pedido">
@@ -217,54 +217,6 @@
   </section>
 
   <!-- ================= TARJETA DE PRESENTACIÓN & QR MODAL ================= -->
-  <div class="modal-overlay" id="card-modal-overlay">
-    <div class="modal-container card-modal-container">
-      <button class="modal-close" id="card-modal-close"><i class="fas fa-times"></i></button>
-
-      <div class="modal-header">
-        <h3><i class="fas fa-qrcode" style="color: var(--gold-primary);"></i> Tarjeta de Presentación & QR</h3>
-        <p>Escanea con tu celular o imprime las tarjetas de presentación para la feria.</p>
-      </div>
-
-      <div class="modal-body card-modal-body">
-        <div class="biz-card-preview-wrap">
-          <!-- Frente -->
-          <div class="biz-card biz-card-front">
-            <div class="biz-card-brand">
-              <img src="assets/logo.png" alt="BestSushi Logo" class="biz-card-logo">
-              <div class="biz-card-title-wrap">
-                <span class="biz-card-title">BestSushi</span>
-                <span class="biz-card-subtitle">CORONEL</span>
-              </div>
-            </div>
-            <p class="biz-card-slogan">El mejor Sushi, Handrolls Crispy & Empanadas</p>
-            <div class="biz-card-info">
-              <p><i class="fab fa-whatsapp"></i> +56 9 3737 3076</p>
-              <p><i class="fab fa-instagram"></i> @bestsushi.coronel</p>
-              <p><i class="fas fa-map-marker-alt"></i> Coronel, Región del Bío Bío</p>
-            </div>
-          </div>
-
-          <!-- Reverso -->
-          <div class="biz-card biz-card-back">
-            <div class="qr-box">
-              <img
-                src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://bestsushicoronel.up.railway.app&color=d4af37&bgcolor=0e0e0e"
-                alt="QR BestSushi Coronel" class="qr-img" id="qr-modal-img">
-            </div>
-            <p class="qr-text">¡ESCANEA Y PIDE ONLINE!</p>
-            <span class="qr-subtext">Solo Retiro en Local</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal-footer" style="display:flex; justify-content:center; gap:12px;">
-        <a href="tarjeta.html" target="_blank" class="btn-primary">
-          <i class="fas fa-print"></i> Imprimir Tarjetas (Hoja Oficio/Carta)
-        </a>
-      </div>
-    </div>
-  </div>
 
   <!-- ================= CART BACKDROP & DRAWER ================= -->
   <div class="cart-backdrop" id="cart-backdrop"></div>
@@ -279,50 +231,52 @@
       <button class="modal-close" id="cart-close"><i class="fas fa-times"></i></button>
     </div>
 
-    <div class="cart-items-list" id="cart-items-list">
-      <!-- Items dynamically injected -->
-    </div>
-
-    <div class="cart-order-details">
-      <div class="cart-detail-group">
-        <label for="cart-delivery-method">
-          <i class="fas fa-store"></i> Modalidad de entrega:
-        </label>
-        <select id="cart-delivery-method">
-          <option value="Retiro en Local" selected>🛍️ Retiro en Local</option>
-        </select>
+    <div class="cart-scrollable-area" style="flex: 1; overflow-y: auto; display: flex; flex-direction: column;">
+      <div class="cart-items-list" id="cart-items-list" style="flex-grow: 0; overflow-y: visible; padding-bottom: 0.5rem;">
+        <!-- Items dynamically injected -->
       </div>
-      <div class="cart-detail-group">
-        <label><i class="far fa-clock"></i> Horario del pedido:</label>
-        <div class="time-toggle-container">
-          <button type="button" class="time-toggle-btn active" id="time-toggle-now">⚡ Para ahora</button>
-          <button type="button" class="time-toggle-btn" id="time-toggle-later">📅 Programar hora</button>
-        </div>
-        <div class="time-select-wrapper" id="time-select-wrapper" style="display: none;">
-          <select id="cart-delivery-time">
-            <option value="Lo antes posible">⚡ Lo antes posible (Para ahora)</option>
-            <option value="12:00 hrs">12:00 hrs</option>
-            <option value="12:30 hrs">12:30 hrs</option>
-            <option value="13:00 hrs">13:00 hrs</option>
-            <option value="13:30 hrs">13:30 hrs</option>
-            <option value="14:00 hrs">14:00 hrs</option>
-            <option value="14:30 hrs">14:30 hrs</option>
-            <option value="15:00 hrs">15:00 hrs</option>
-            <option value="15:30 hrs">15:30 hrs</option>
-            <option value="16:00 hrs">16:00 hrs</option>
-            <option value="16:30 hrs">16:30 hrs</option>
-            <option value="17:00 hrs">17:00 hrs</option>
-            <option value="17:30 hrs">17:30 hrs</option>
-            <option value="18:00 hrs">18:00 hrs</option>
-            <option value="18:30 hrs">18:30 hrs</option>
-            <option value="19:00 hrs">19:00 hrs</option>
-            <option value="19:30 hrs">19:30 hrs</option>
-            <option value="20:00 hrs">20:00 hrs</option>
-            <option value="20:30 hrs">20:30 hrs</option>
-            <option value="21:00 hrs">21:00 hrs</option>
-            <option value="21:30 hrs">21:30 hrs</option>
-            <option value="22:00 hrs">22:00 hrs</option>
+
+      <div class="cart-order-details" style="margin-top: auto; border-top: 1px solid var(--border-subtle); padding: 1rem 1.5rem;">
+        <div class="cart-detail-group">
+          <label for="cart-delivery-method">
+            <i class="fas fa-store"></i> Modalidad de entrega:
+          </label>
+          <select id="cart-delivery-method">
+            <option value="Retiro en Local" selected>🛍️ Retiro en Local</option>
           </select>
+        </div>
+        <div class="cart-detail-group">
+          <label><i class="far fa-clock"></i> Horario del pedido:</label>
+          <div class="time-toggle-container">
+            <button type="button" class="time-toggle-btn active" id="time-toggle-now">⚡ Para ahora</button>
+            <button type="button" class="time-toggle-btn" id="time-toggle-later">📅 Programar hora</button>
+          </div>
+          <div class="time-select-wrapper" id="time-select-wrapper" style="display: none;">
+            <select id="cart-delivery-time">
+              <option value="Lo antes posible">⚡ Lo antes posible (Para ahora)</option>
+              <option value="12:00 hrs">12:00 hrs</option>
+              <option value="12:30 hrs">12:30 hrs</option>
+              <option value="13:00 hrs">13:00 hrs</option>
+              <option value="13:30 hrs">13:30 hrs</option>
+              <option value="14:00 hrs">14:00 hrs</option>
+              <option value="14:30 hrs">14:30 hrs</option>
+              <option value="15:00 hrs">15:00 hrs</option>
+              <option value="15:30 hrs">15:30 hrs</option>
+              <option value="16:00 hrs">16:00 hrs</option>
+              <option value="16:30 hrs">16:30 hrs</option>
+              <option value="17:00 hrs">17:00 hrs</option>
+              <option value="17:30 hrs">17:30 hrs</option>
+              <option value="18:00 hrs">18:00 hrs</option>
+              <option value="18:30 hrs">18:30 hrs</option>
+              <option value="19:00 hrs">19:00 hrs</option>
+              <option value="19:30 hrs">19:30 hrs</option>
+              <option value="20:00 hrs">20:00 hrs</option>
+              <option value="20:30 hrs">20:30 hrs</option>
+              <option value="21:00 hrs">21:00 hrs</option>
+              <option value="21:30 hrs">21:30 hrs</option>
+              <option value="22:00 hrs">22:00 hrs</option>
+            </select>
+          </div>
         </div>
       </div>
     </div>
