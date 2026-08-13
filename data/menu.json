@@ -168,6 +168,18 @@
       "customizable": false
     },
     {
+      "id": "sushi-roll-cebollin-crispy",
+      "category": "sushi",
+      "title": "Roll Cebollín Crispy Pollo Palta",
+      "price": 8490,
+      "price_display": "$8.490",
+      "badge": "10 PIEZAS PREMIUM",
+      "popular": true,
+      "description": "Exclusivo roll de 10 piezas relleno de Pollo crispy y Palta, envuelto en cebollín crocante y bañado con nuestra exquisita salsa de ají ahumado casera.",
+      "image": "assets/Cebollin_kryspi_pollo_palta_con_salsa_aji_ahumado.jpeg",
+      "customizable": false
+    },
+    {
       "id": "handroll-1x",
       "category": "handrolls",
       "title": "1x Handroll Crispy",
