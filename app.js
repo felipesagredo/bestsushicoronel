@@ -1431,16 +1431,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Handle Hero Image click: Filter by Sushi and scroll
+  // Handle Hero Image click: Show all promos and scroll
   const heroImageLink = document.getElementById('hero-image-link');
   if (heroImageLink) {
     heroImageLink.addEventListener('click', (e) => {
       e.preventDefault();
-      currentCategory = 'sushi';
+      currentCategory = 'todas';
       
       // Update UI active category tabs
       document.querySelectorAll('.category-btn').forEach(btn => {
-        if (btn.textContent.includes('Sushi')) {
+        if (btn.textContent.includes('Todas')) {
           btn.classList.add('active');
         } else {
           btn.classList.remove('active');
