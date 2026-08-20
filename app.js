@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // DOM Elements
   const productsGrid = document.getElementById('products-grid');
+  const menuSearchInput = document.getElementById('menu-search-input');
   const categoriesNav = document.getElementById('categories-nav');
   const cartBtnTrigger = document.getElementById('cart-btn-trigger');
   const cartDrawer = document.getElementById('cart-drawer');
@@ -198,6 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.className = `category-btn ${cat.id === currentCategory ? 'active' : ''}`;
       btn.textContent = cat.name;
       btn.addEventListener('click', () => {
+        if (menuSearchInput) menuSearchInput.value = '';
         currentCategory = cat.id;
         document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
@@ -209,6 +211,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
       categoriesNav.appendChild(btn);
+    });
+  }
+
+  // Search Bar Event Listener
+  if (menuSearchInput) {
+    menuSearchInput.addEventListener('input', (e) => {
+      const query = e.target.value;
+      
+      if (query.trim() !== '' && currentCategory !== 'todas') {
+        currentCategory = 'todas';
+        document.querySelectorAll('.category-btn').forEach(b => {
+          if (b.textContent === 'Todas las Promos' || b.textContent.includes('Todas')) {
+            b.classList.add('active');
+          } else {
+            b.classList.remove('active');
+          }
+        });
+      }
+
+      renderProducts(query);
+      
+      const menuSection = document.getElementById('menu');
+      if (query.length === 1 && menuSection && window.scrollY < menuSection.offsetTop - 100) {
+        menuSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
   }
 
@@ -249,14 +276,29 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   }
 
-  // Render Products Grid based on selected category
-  function renderProducts() {
+  // Render Products Grid based on selected category and optional search query
+  function renderProducts(searchQuery = '') {
     if (!menuData || !menuData.items) return;
     productsGrid.innerHTML = '';
 
-    const filteredItems = currentCategory === 'todas'
-      ? menuData.items
-      : menuData.items.filter(item => item.category === currentCategory);
+    let filteredItems = menuData.items;
+
+    if (searchQuery && searchQuery.trim() !== '') {
+      const q = searchQuery.toLowerCase();
+      filteredItems = filteredItems.filter(item => {
+        return (item.title && item.title.toLowerCase().includes(q)) || 
+               (item.description && item.description.toLowerCase().includes(q));
+      });
+    } else {
+      filteredItems = currentCategory === 'todas'
+        ? menuData.items
+        : menuData.items.filter(item => item.category === currentCategory);
+    }
+
+    if (filteredItems.length === 0) {
+      productsGrid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 2rem; color: var(--text-muted);">No se encontraron productos que coincidan con tu búsqueda.</div>';
+      return;
+    }
 
     filteredItems.forEach(item => {
       const card = document.createElement('div');

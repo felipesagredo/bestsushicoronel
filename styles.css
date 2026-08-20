@@ -150,33 +150,42 @@ body {
   color: var(--red-accent);
 }
 
-/* Status Badge */
-.app-status-badge {
-  display: inline-flex;
+/* Header Search Bar */
+.header-search-bar {
+  flex: 1;
+  max-width: 400px;
+  display: flex;
   align-items: center;
-  gap: 6px;
-  background: #f0fdf4;
-  border: 1px solid #bbf7d0;
-  color: #166534;
-  font-size: 0.78rem;
-  font-weight: 700;
-  padding: 0.35rem 0.85rem;
+  background: #f1f5f9;
   border-radius: var(--radius-pill);
+  padding: 0.5rem 1rem;
+  margin: 0 1rem;
+  transition: var(--transition);
+  border: 1px solid transparent;
 }
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  background: #22c55e;
-  border-radius: 50%;
-  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
-  animation: pulse-dot 2s infinite;
+.header-search-bar:focus-within {
+  background: #ffffff;
+  border-color: var(--gold-primary);
+  box-shadow: 0 4px 12px rgba(220,186,134,0.15);
 }
-
-@keyframes pulse-dot {
-  0% { transform: scale(0.95); opacity: 0.8; }
-  50% { transform: scale(1.15); opacity: 1; }
-  100% { transform: scale(0.95); opacity: 0.8; }
+.header-search-bar i {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-right: 8px;
+}
+.header-search-bar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  outline: none;
+}
+.header-search-bar input::placeholder {
+  color: #94a3b8;
+  font-weight: 500;
 }
 
 .topbar-actions {
@@ -1944,8 +1953,25 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .app-status-badge {
+  .topbar-inner {
+    gap: 0.5rem;
+  }
+  .app-brand-text {
     display: none;
+  }
+  .header-search-bar {
+    max-width: none;
+    padding: 0.4rem 0.6rem;
+    margin: 0;
+  }
+  .header-search-bar input {
+    font-size: 0.85rem;
+  }
+  .cart-label {
+    display: none;
+  }
+  .cart-btn-trigger {
+    padding: 0.5rem;
   }
 
   .nav-link-eventos {
@@ -1967,6 +1993,28 @@ body {
 
   .eventos-grid {
     grid-template-columns: 1fr;
+  }
+
+  .eventos-feature-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .eventos-feature-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .eventos-feature-tags {
+    justify-content: center;
+  }
+
+  .eventos-feature-actions {
+    justify-content: center;
+  }
+
+  .eventos-feature-visual {
+    height: 180px;
+    min-height: auto;
   }
 
   .contact-grid {
