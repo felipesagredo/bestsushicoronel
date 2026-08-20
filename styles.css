@@ -248,7 +248,7 @@ body {
 .store-cover-wrap {
   position: relative;
   width: 100%;
-  height: 180px;
+  height: 240px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-card);
@@ -1885,7 +1885,7 @@ body {
   }
 
   .store-cover-wrap {
-    height: 140px;
+    height: 180px;
   }
 
   .store-profile-card {
