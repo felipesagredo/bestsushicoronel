@@ -12,13 +12,15 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bestsushicoronel.cl/">
   <meta property="og:title" content="BestSushi Coronel | El mejor Sushi, Handrolls y Empanadas">
-  <meta property="og:description" content="Descubre las mejores promociones de sushi, handrolls crispy y empanadas fritas en Coronel. Pide a domicilio o retira en local. ¡Atención de Lunes a Sábado!">
+  <meta property="og:description"
+    content="Descubre las mejores promociones de sushi, handrolls crispy y empanadas fritas en Coronel. Pide a domicilio o retira en local. ¡Atención de Lunes a Sábado!">
   <meta property="og:image" content="assets/promo_sushi_ig.png">
 
   <!-- Twitter (SEO Sharing) -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:title" content="BestSushi Coronel | El mejor Sushi, Handrolls y Empanadas">
-  <meta property="twitter:description" content="Descubre las mejores promociones de sushi, handrolls crispy y empanadas fritas en Coronel. Pide a domicilio o retira en local. ¡Atención de Lunes a Sábado!">
+  <meta property="twitter:description"
+    content="Descubre las mejores promociones de sushi, handrolls crispy y empanadas fritas en Coronel. Pide a domicilio o retira en local. ¡Atención de Lunes a Sábado!">
   <meta property="twitter:image" content="assets/promo_sushi_ig.png">
 
   <!-- Favicon -->
@@ -38,72 +40,123 @@
 
 <body>
 
-  <!-- ================= NAV BAR ================= -->
-  <nav class="navbar">
+  <!-- ================= TOP APP BAR ================= -->
+  <header class="app-topbar">
     <div class="container">
-      <a href="#inicio" class="nav-brand">
-        <img src="assets/logo.png" alt="BestSushi Coronel Logo" class="nav-logo">
-        <div class="nav-title">
-          BestSushi
-          <span>CORONEL</span>
+      <div class="topbar-inner">
+        <a href="#inicio" class="app-brand">
+          <img src="assets/logo.png" alt="BestSushi Logo" class="app-logo">
+          <div class="app-brand-text">
+            <span class="brand-name">BestSushi</span>
+            <span class="brand-sub">CORONEL</span>
+          </div>
+        </a>
+
+        <div class="app-status-badge">
+          <span class="status-dot"></span>
+          <span>Abierto · Retiro en 20-30 min</span>
         </div>
-      </a>
 
-      <ul class="nav-links">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#menu">Menú y Promos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <div class="topbar-actions">
+          <a href="#eventos" class="nav-link-eventos"><i class="fas fa-glass-cheers"></i> Eventos</a>
+          <button class="cart-btn-trigger" id="cart-btn-trigger" aria-label="Ver Carrito de Pedido">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-label">Mi Pedido</span>
+            <span class="cart-count" id="cart-count">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
 
-      </ul>
+  <!-- ================= STORE HERO SHOWCASE (UBEREATS / RAPPI PRO) ================= -->
+  <section id="inicio" class="store-showcase-section">
+    <div class="container">
+      <!-- Store Banner Cover -->
+      <div class="store-cover-wrap">
+        <img src="assets/Cebollin_kryspi_pollo_palta_con_salsa_aji_ahumado.jpeg" alt="BestSushi Cover"
+          class="store-cover-img">
+        <div class="store-cover-overlay"></div>
+      </div>
 
-      <button class="cart-btn-trigger" id="cart-btn-trigger" aria-label="Ver Carrito de Pedido">
-        <i class="fas fa-shopping-bag"></i>
-        <span>Mi Pedido</span>
-        <span class="cart-count" id="cart-count">0</span>
-      </button>
+      <!-- Store Profile Card (Overlapping Cover) -->
+      <div class="store-profile-card fade-in-up">
+        <div class="store-profile-header">
+          <div class="store-avatar-wrap">
+            <img src="assets/logo.png" alt="BestSushi Avatar" class="store-avatar">
+            <span class="verified-check" title="Local Verificado"><i class="fas fa-check-circle"></i></span>
+          </div>
+          <div class="store-info-main">
+            <h1 class="store-title">BestSushi Coronel</h1>
+            <div class="store-meta-tags">
+              <span class="meta-rating" id="store-global-rating"><i class="fas fa-star"></i> 5.0 (0 reseñas)</span>
+              <span class="meta-dot">·</span>
+              <span class="meta-tag">Sushi & Handrolls</span>
+              <span class="meta-dot">·</span>
+              <span class="meta-price">Pedidos personalizados</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="store-quick-badges">
+          <div class="badge-item">
+            <i class="fas fa-store"></i>
+            <span>Solo Retiro en Local</span>
+          </div>
+          <div class="badge-item">
+            <i class="far fa-clock"></i>
+            <span>20 - 30 min aprox</span>
+          </div>
+          <div class="badge-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Coronel, Bío Bío</span>
+          </div>
+          <div class="badge-item badge-schedule">
+            <i class="far fa-calendar-alt"></i>
+            <span id="hero-schedule-badge">Lun a Sáb: 12:00 a 22:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STICKY CATEGORIES NAV BAR ================= -->
+  <nav class="sticky-categories-bar" id="sticky-categories-bar">
+    <div class="container">
+      <div class="categories-scroll-wrap" id="categories-nav">
+        <!-- Dynamically rendered via app.js with chips/pills -->
+      </div>
     </div>
   </nav>
 
-  <!-- ================= HERO SECTION ================= -->
-  <section id="inicio" class="hero">
+  <!-- ================= PROMO EVENTOS BANNER ================= -->
+  <section class="promo-eventos-banner fade-in-up">
     <div class="container">
-      <div class="hero-grid">
-        <div class="hero-content fade-in-up">
-          <span class="hero-badge">Sabor & Calidad Inigualable</span>
-          <h1 class="hero-title">El Sabor del Mejor <span class="text-gold">Sushi en Coronel</span></h1>
-          <p class="hero-subtitle">
-            Disfruta de nuestras exclusivas promos de 30 y 40 Piezas, Handrolls Crispy súper crujientes y Empanadas
-            Fritas rellenas al instante.
+      <div class="eventos-feature-card">
+        <div class="eventos-feature-content">
+          <span class="eventos-feature-badge"><i class="fas fa-glass-cheers"></i> CATERING & EVENTOS</span>
+          <h3 class="eventos-feature-title">¿Celebración, Cumpleaños o Reunión de Oficina?</h3>
+          <p class="eventos-feature-desc">
+            Preparamos bandejas de sushi exclusivas, desayunos corporativos y almuerzos ejecutivos adaptados a tu
+            presupuesto y ocasión.
           </p>
-          <div class="hero-actions">
-            <a href="#menu" class="btn-primary">
-              <i class="fas fa-utensils"></i> Ver Promociones
-            </a>
-            <a href="https://wa.me/56937373076" target="_blank" class="btn-whatsapp" id="hero-whatsapp-btn">
-              <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-            </a>
+          <div class="eventos-feature-tags">
+            <span class="feature-pill"><i class="fas fa-check-circle"></i> Cotización rápida</span>
+            <span class="feature-pill"><i class="fas fa-check-circle"></i> Menús 100% a medida</span>
+            <span class="feature-pill"><i class="fas fa-check-circle"></i> Bandejas familiares</span>
           </div>
-
-          <div class="hero-features">
-            <div class="feature-item">
-              <i class="fas fa-store"></i>
-              <span>Solo Retiro en Local</span>
-            </div>
-            <div class="feature-item">
-              <i class="fas fa-star"></i>
-              <span>Ingredientes de Calidad</span>
-            </div>
-            <div class="feature-item">
-              <i class="far fa-clock"></i>
-              <span>Lunes a Sábado</span>
-            </div>
+          <div class="eventos-feature-actions">
+            <a href="#eventos" class="btn-eventos-cta">
+              <i class="fas fa-calendar-alt"></i> Ver Opciones de Catering
+            </a>
+            <a href="https://wa.me/56937373076?text=Hola%20BestSushi,%20quisiera%20cotizar%20un%20evento%20o%20catering%20especial."
+              target="_blank" class="btn-eventos-wa">
+              <i class="fab fa-whatsapp"></i> Cotizar por WhatsApp
+            </a>
           </div>
         </div>
-
-        <div class="hero-banner-card fade-in-up">
-          <a href="#menu" id="hero-image-link">
-            <img src="assets/Cebollin_kryspi_pollo_palta_con_salsa_aji_ahumado.jpeg" alt="Nuevas Promos BestSushi Coronel" style="cursor: pointer;">
-          </a>
+        <div class="eventos-feature-visual">
+          <img src="assets/eventos_sushi_catering.jpg" alt="Catering de Sushi y Eventos" class="eventos-feature-img">
         </div>
       </div>
     </div>
@@ -112,16 +165,6 @@
   <!-- ================= MENU & PROMOS SECTION ================= -->
   <section id="menu" class="menu-section">
     <div class="container">
-      <div class="section-header fade-in-up">
-        <span class="section-tag">NUESTRA CARTA</span>
-        <h2 class="section-title">Promociones & Menú Especial</h2>
-      </div>
-
-      <!-- Categories Filter Tabs -->
-      <div class="categories-nav" id="categories-nav">
-        <!-- Dynamically rendered via app.js -->
-      </div>
-
       <!-- Products Grid -->
       <div class="products-grid" id="products-grid">
         <!-- Dynamically rendered via app.js -->
@@ -135,7 +178,7 @@
       <div class="configurator-card">
         <div class="configurator-header">
           <div>
-            <span class="section-tag"><i class="fas fa-sliders-h"></i> PASO A PASO EN LA PÁGINA</span>
+            <span class="section-tag"><i class="fas fa-sliders-h"></i> PERSONALIZA TU ROLLS</span>
             <h2 id="configurator-title" class="configurator-title">Arma tu Promo</h2>
             <p id="configurator-price" class="configurator-price">$0</p>
           </div>
@@ -151,7 +194,7 @@
 
         <div class="configurator-summary-bar">
           <div class="summary-details-wrap">
-            <span class="summary-label">Resumen de tu selección:</span>
+            <span class="summary-label">Resumen:</span>
             <p id="configurator-summary-text" class="summary-text">Selecciona tus ingredientes...</p>
           </div>
           <button type="button" class="btn-primary btn-add-configurator" id="configurator-add-btn">
@@ -161,6 +204,97 @@
       </div>
     </div>
   </section>
+
+  <!-- ================= EVENTOS SECTION ================= -->
+  <section id="eventos" class="eventos-section">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <span class="section-tag">CATERING EXCLUSIVO</span>
+        <h2 class="section-title">Eventos & Cotizaciones</h2>
+        <p class="section-subtitle">Gastronomía y sushi de alta calidad para cumpleaños, reuniones ejecutivas, desayunos
+          y almuerzos.</p>
+      </div>
+
+      <div class="eventos-grid">
+        <!-- Carrusel de fotos reales -->
+        <div class="eventos-carousel-container fade-in-up">
+          <div class="carousel-slider" id="eventos-carousel">
+            <div class="carousel-slides">
+              <div class="carousel-slide active">
+                <img src="assets/eventos_sushi_catering.jpg" alt="Catering de Sushi Premium">
+                <div class="slide-caption">Catering de Sushi para Eventos</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/eventos_desayuno_almuerzo.jpg" alt="Desayunos y Almuerzos Gourmet">
+                <div class="slide-caption">Desayunos & Almuerzos Ejecutivos</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/eventos_cena_privada.jpg" alt="Celebraciones Privadas">
+                <div class="slide-caption">Cumpleaños y Celebraciones Privadas</div>
+              </div>
+            </div>
+
+            <!-- Botones anterior/siguiente -->
+            <button class="carousel-prev" aria-label="Foto anterior"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-next" aria-label="Siguiente foto"><i class="fas fa-chevron-right"></i></button>
+
+            <!-- Puntos de navegación (Dots) -->
+            <div class="carousel-dots">
+              <span class="dot active" data-slide="0"></span>
+              <span class="dot" data-slide="1"></span>
+              <span class="dot" data-slide="2"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Información y Cotización -->
+        <div class="eventos-info-card fade-in-up">
+          <h3>Catering a tu Medida</h3>
+          <p>
+            Propuestas personalizadas con ingredientes frescos para sorprender a tus invitados.
+          </p>
+
+          <ul class="eventos-features-list">
+            <li>
+              <div class="feature-icon"><i class="fas fa-birthday-cake"></i></div>
+              <div class="feature-text">
+                <h4>Eventos y Celebraciones</h4>
+                <p>Bandejas familiares y combos premium.</p>
+              </div>
+            </li>
+            <li>
+              <div class="feature-icon"><i class="fas fa-coffee"></i></div>
+              <div class="feature-text">
+                <h4>Desayunos y Almuerzos</h4>
+                <p>Opciones corporativas y de oficina.</p>
+              </div>
+            </li>
+            <li>
+              <div class="feature-icon"><i class="fas fa-sliders-h"></i></div>
+              <div class="feature-text">
+                <h4>100% Personalizado</h4>
+                <p>Elige envolturas, rellenos y salsas.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="eventos-actions-box">
+            <p>Cotiza directamente por WhatsApp:</p>
+            <div class="eventos-buttons">
+              <a href="https://wa.me/56937373076?text=Hola%20BestSushi,%20me%20gustar%C3%ADa%20cotizar%20un%20evento%20personalizado%20(desayuno,%20almuerzo%20o%20catering%20de%20sushi)."
+                target="_blank" class="btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Cotizar por WhatsApp
+              </a>
+              <a href="https://instagram.com/bestsushicoronel" target="_blank" class="btn-instagram">
+                <i class="fab fa-instagram"></i> Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contacto" class="contact-section">
     <div class="container">
       <div class="contact-card fade-in-up">
@@ -201,7 +335,8 @@
           <!-- Instagram Feature Card -->
           <div class="instagram-box">
             <i class="fab fa-instagram instagram-icon"></i>
-            <h3 style="color: var(--text-dark); font-size: 1.5rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">
+            <h3
+              style="color: var(--text-dark); font-size: 1.5rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">
               ¡Síguenos en Instagram!</h3>
             <p style="color: var(--text-secondary); font-size: 0.95rem;">
               Entérate de sorteos, promociones del día y contenido exclusivo de BestSushi Coronel.
@@ -232,28 +367,32 @@
     </div>
 
     <div class="cart-scrollable-area" style="flex: 1; overflow-y: auto; display: flex; flex-direction: column;">
-      <div class="cart-items-list" id="cart-items-list" style="flex-grow: 0; overflow-y: visible; padding-bottom: 0.5rem;">
+      <div class="cart-items-list" id="cart-items-list"
+        style="flex-grow: 0; overflow-y: visible; padding-bottom: 0.5rem;">
         <!-- Items dynamically injected -->
       </div>
 
-      <div class="cart-order-details" style="margin-top: auto; border-top: 1px solid var(--border-subtle); padding: 1rem 1.5rem;">
+      <div class="cart-order-details"
+        style="margin-top: auto; border-top: 1px solid var(--border-subtle); padding: 1rem 1.5rem;">
         <div class="cart-detail-group">
           <label for="cart-delivery-method">
             <i class="fas fa-store"></i> Modalidad de entrega:
           </label>
           <select id="cart-delivery-method">
-            <option value="Retiro en Local" selected>🛍️ Retiro en Local</option>
+            <option value="Retiro en Local" selected>Retiro en Local</option>
           </select>
         </div>
         <div class="cart-detail-group">
           <label><i class="far fa-clock"></i> Horario del pedido:</label>
           <div class="time-toggle-container">
-            <button type="button" class="time-toggle-btn active" id="time-toggle-now">⚡ Para ahora</button>
-            <button type="button" class="time-toggle-btn" id="time-toggle-later">📅 Programar hora</button>
+            <button type="button" class="time-toggle-btn active" id="time-toggle-now"><i class="fas fa-bolt"></i> Para
+              ahora</button>
+            <button type="button" class="time-toggle-btn" id="time-toggle-later"><i class="far fa-calendar-alt"></i>
+              Programar hora</button>
           </div>
           <div class="time-select-wrapper" id="time-select-wrapper" style="display: none;">
             <select id="cart-delivery-time">
-              <option value="Lo antes posible">⚡ Lo antes posible (Para ahora)</option>
+              <option value="Lo antes posible">Lo antes posible (Para ahora)</option>
               <option value="12:00 hrs">12:00 hrs</option>
               <option value="12:30 hrs">12:30 hrs</option>
               <option value="13:00 hrs">13:00 hrs</option>
@@ -302,12 +441,254 @@
   <!-- ================= FOOTER ================= -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 BestSushi Coronel. Todos los derechos reservados.</p>
+      <p>&copy; 2026 BestSushi Coronel. Todos los derechos reservados. | <a href="#admin" id="admin-trigger-link"
+          style="color: inherit; text-decoration: none; opacity: 0.6; font-size: 0.85rem; transition: opacity 0.2s;"
+          onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.6"><i class="fas fa-lock"></i> Panel
+          Admin</a></p>
       <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
         El mejor sushi, handrolls crispy y empanadas fritas de la Región del Bío Bío.
       </p>
     </div>
   </footer>
+
+  <!-- ================= REVIEWS MODAL ================= -->
+  <div class="reviews-backdrop" id="reviews-backdrop"></div>
+  <div class="reviews-modal" id="reviews-modal">
+    <div class="reviews-modal-header">
+      <h3 id="reviews-modal-title">Reseñas del Producto</h3>
+      <button class="modal-close" id="reviews-modal-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="reviews-modal-body">
+      <!-- Star ratings summary -->
+      <div class="reviews-summary-rating">
+        <div class="average-stars" id="reviews-average-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div class="reviews-count" id="reviews-count-text">5 reseñas</div>
+      </div>
+
+      <!-- Existing Comments List -->
+      <div class="reviews-list" id="reviews-list">
+        <!-- Dynamically populated -->
+      </div>
+
+      <!-- Add Review Form -->
+      <form class="add-review-form" id="add-review-form">
+        <h4>Escribe tu opinión</h4>
+        <div class="form-group">
+          <label>Calificación:</label>
+          <div class="stars-selector" id="stars-selector">
+            <i class="fas fa-star active" data-value="1"></i>
+            <i class="fas fa-star active" data-value="2"></i>
+            <i class="fas fa-star active" data-value="3"></i>
+            <i class="fas fa-star active" data-value="4"></i>
+            <i class="fas fa-star active" data-value="5"></i>
+          </div>
+          <input type="hidden" id="review-rating-input" value="5">
+        </div>
+        <div class="form-group">
+          <input type="text" id="review-name-input" placeholder="Tu Nombre o Apodo" required>
+        </div>
+        <div class="form-group">
+          <textarea id="review-comment-input" rows="3"
+            placeholder="¿Qué te pareció este producto? ¿Te gustó el sabor, la envoltura, la salsa?"
+            required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width: 100%;">Enviar Reseña</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= ADMIN PANEL MODAL ================= -->
+  <div class="admin-backdrop" id="admin-backdrop"></div>
+  <div class="admin-modal" id="admin-modal">
+    <!-- Admin Login Screen -->
+    <div class="admin-login-card" id="admin-login-card">
+      <div class="admin-login-header">
+        <div class="admin-login-logo">
+          <i class="fas fa-lock"></i>
+        </div>
+        <h3>Panel de Administración</h3>
+        <p>Ingresa tu clave de acceso para gestionar BestSushi.</p>
+      </div>
+      <form id="admin-login-form">
+        <div class="form-group form-group-icon">
+          <i class="fas fa-key icon-left"></i>
+          <input type="password" id="admin-password-input" placeholder="Contraseña secreta..." required>
+        </div>
+        <p class="error-msg" id="admin-login-error"
+          style="display: none; color: var(--red-accent); font-size: 0.82rem; margin-top: -5px; margin-bottom: 15px; font-weight: 600;">
+          <i class="fas fa-exclamation-circle"></i> Contraseña incorrecta
+        </p>
+
+        <button type="submit" class="btn-primary"
+          style="width: 100%; border-radius: 12px; padding: 0.8rem; font-size: 0.95rem;"><i
+            class="fas fa-sign-in-alt"></i> Acceder al Panel</button>
+        <button type="button" class="btn-close-admin" id="btn-close-login"
+          style="width: 100%; margin-top: 10px; background: #f1f5f9; border: none; color: var(--text-muted); font-weight: 700; cursor: pointer; padding: 0.8rem; border-radius: 12px; transition: var(--transition);">Cancelar</button>
+      </form>
+    </div>
+
+    <!-- Admin Panel Dashboard (Hidden initially) -->
+    <div class="admin-dashboard" id="admin-dashboard" style="display: none;">
+      <div class="admin-header">
+        <div class="admin-header-title">
+          <div class="admin-avatar"><i class="fas fa-user-shield"></i></div>
+          <div>
+            <h3 style="margin: 0; font-size: 1.1rem; color: var(--text-dark);">Panel de Control</h3>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Administrador BestSushi</span>
+          </div>
+        </div>
+        <div class="admin-header-actions">
+          <button class="btn-primary" id="admin-new-product-btn"
+            style="background: var(--green-whatsapp); font-size: 0.85rem; border-radius: 8px;"><i
+              class="fas fa-plus"></i> <span class="hide-mobile">Nuevo Producto</span></button>
+          <button class="btn-close-dashboard" id="admin-modal-close" title="Cerrar Panel"><i
+              class="fas fa-times"></i></button>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs (Segmented Control style) -->
+      <div class="admin-tabs-wrapper">
+        <div class="admin-tabs">
+          <button class="admin-tab active" data-tab="products"><i class="fas fa-box-open"></i> Menú</button>
+          <button class="admin-tab" data-tab="comments"><i class="fas fa-star"></i> Reseñas</button>
+        </div>
+      </div>
+
+      <!-- Tab Contents -->
+      <div class="admin-tab-content active" id="tab-products">
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Categoría</th>
+                <th>Badge/Etiqueta</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="admin-products-table-body">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="admin-tab-content" id="tab-comments">
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Producto</th>
+                <th>Usuario</th>
+                <th>Calificación</th>
+                <th>Comentario</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="admin-comments-table-body">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= PRODUCT EDIT MODAL (ADMIN NESTED) ================= -->
+  <div class="edit-product-backdrop" id="edit-product-backdrop"></div>
+  <div class="edit-product-modal" id="edit-product-modal">
+    <div class="edit-product-header">
+      <h3 id="edit-product-modal-title">Editar Producto</h3>
+      <button class="modal-close" id="edit-product-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="edit-product-body">
+      <form id="edit-product-form" class="admin-edit-form">
+        <input type="hidden" id="edit-product-id">
+
+        <div class="form-grid-2col">
+          <div class="form-group">
+            <label for="edit-product-title">Nombre del Producto</label>
+            <input type="text" id="edit-product-title" placeholder="Ej: Handroll Camarón" required>
+          </div>
+          <div class="form-group">
+            <label for="edit-product-price">Precio ($)</label>
+            <input type="number" id="edit-product-price" placeholder="Ej: 4500" required>
+          </div>
+        </div>
+
+        <div class="form-grid-2col">
+          <div class="form-group">
+            <label for="edit-product-category">Categoría</label>
+            <select id="edit-product-category" required>
+              <option value="sushi">Sushi</option>
+              <option value="handrolls">Handrolls Crispy</option>
+              <option value="empanadas">Empanadas</option>
+              <option value="combos">Combos Mixtos</option>
+              <option value="salsas">Salsas y Extras</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="edit-product-badge">Etiqueta (Opcional)</label>
+            <input type="text" id="edit-product-badge" placeholder="Ej: ¡MÁS POPULAR!, 30 PIEZAS">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="edit-product-desc">Descripción Breve</label>
+          <textarea id="edit-product-desc" rows="2" placeholder="Describe los ingredientes principales..."
+            required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="edit-product-image">Ruta de la Imagen</label>
+          <div class="input-with-icon">
+            <i class="far fa-image icon-left"></i>
+            <input type="text" id="edit-product-image" placeholder="Ej: assets/mi_foto.jpg" required>
+          </div>
+        </div>
+
+        <div class="form-group options-group">
+          <label>Opciones Avanzadas:</label>
+          <div class="checkbox-options">
+            <label class="custom-checkbox">
+              <input type="checkbox" id="edit-product-popular">
+              <span class="checkmark"></span> Destacado/Popular
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" id="edit-product-customizable">
+              <span class="checkmark"></span> Personalizable (Permite Arma tu Promo)
+            </label>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary btn-save"><i class="fas fa-save"></i> Guardar Cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= FLOATING MOBILE ORDER BAR ================= -->
+  <aside class="mobile-bottom-order-bar" id="mobile-bottom-order-bar">
+    <div class="mobile-order-info">
+      <span class="mobile-order-count" id="mobile-order-count">0</span>
+      <div class="mobile-order-text">
+        <span class="mobile-order-label">Mi Pedido</span>
+        <span class="mobile-order-total" id="mobile-order-total">$0</span>
+      </div>
+    </div>
+    <button type="button" class="btn-mobile-order-action" id="btn-mobile-order-action">
+      <span>Ver Pedido</span>
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </aside>
+
+  <!-- ================= TOAST NOTIFICATIONS ================= -->
+  <div id="toast-container" class="toast-container"></div>
 
   <!-- Scripts -->
   <script src="app.js"></script>

@@ -1,0 +1,36 @@
+{
+  "reviews": [
+    {
+      "id": "rev-1",
+      "productId": "sushi-30-piezas",
+      "author": "Camila S.",
+      "rating": 5,
+      "date": "2026-08-15",
+      "comment": "Excelente promo, los rolls llegaron calientitos y crocantes. La salsa teriyaki 10/10."
+    },
+    {
+      "id": "rev-2",
+      "productId": "handroll-crispy-1x",
+      "author": "Matías R.",
+      "rating": 5,
+      "date": "2026-08-16",
+      "comment": "El mejor handroll de Coronel sin duda. Mucho relleno y súper crujiente."
+    },
+    {
+      "id": "rev-3",
+      "productId": "sushi-40-piezas",
+      "author": "Francisca M.",
+      "rating": 5,
+      "date": "2026-08-18",
+      "comment": "Ideal para compartir en familia. Todo fresco y muy bien presentado."
+    },
+    {
+      "id": "rev-4",
+      "productId": "empanadas-fritas-1x",
+      "author": "Gonzalo P.",
+      "rating": 5,
+      "date": "2026-08-19",
+      "comment": "Las empanadas de queso camarón son una delicia total, fritas en su punto."
+    }
+  ]
+}

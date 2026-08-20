@@ -13,27 +13,27 @@
   "categories": [
     {
       "id": "todas",
-      "name": "🔥 Todas las Promos"
+      "name": "Todas las Promos"
     },
     {
       "id": "sushi",
-      "name": "🍣 Promos Sushi"
+      "name": "Promos Sushi"
     },
     {
       "id": "handrolls",
-      "name": "🌯 Handrolls Crispy"
+      "name": "Handrolls Crispy"
     },
     {
       "id": "empanadas",
-      "name": "🥟 Empanadas"
+      "name": "Empanadas"
     },
     {
       "id": "combos",
-      "name": "🍱 Combos Mixtos"
+      "name": "Combos Mixtos"
     },
     {
       "id": "salsas",
-      "name": "🌶️ Salsas y Extras"
+      "name": "Salsas y Extras"
     }
   ],
   "items": [

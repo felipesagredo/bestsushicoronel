@@ -25,8 +25,207 @@ const MIME_TYPES = {
   '.ttf': 'font/ttf'
 };
 
-const server = http.createServer((req, res) => {
+// Helper to parse JSON request bodies
+function parseJsonBody(req) {
+  return new Promise((resolve) => {
+    let body = '';
+    req.on('data', chunk => { body += chunk.toString(); });
+    req.on('end', () => {
+      try {
+        resolve(JSON.parse(body));
+      } catch (e) {
+        resolve(null);
+      }
+    });
+  });
+}
+
+// Basic Token Authentication check (reads from environment variable)
+function checkAuth(req) {
+  const token = req.headers['x-admin-token'] || '';
+  const adminPassword = process.env.ADMIN_PASSWORD || 'bestsushiadmin123';
+  return token === adminPassword;
+}
+
+const server = http.createServer(async (req, res) => {
   let reqUrl = req.url.split('?')[0];
+
+  // API Routes
+  if (reqUrl.startsWith('/api/')) {
+    res.setHeader('Content-Type', 'application/json; charset=UTF-8');
+    
+    // GET /api/menu
+    if (reqUrl === '/api/menu' && req.method === 'GET') {
+      const menuPath = path.join(__dirname, 'data', 'menu.json');
+      fs.readFile(menuPath, 'utf8', (err, data) => {
+        if (err) {
+          res.writeHead(500);
+          res.end(JSON.stringify({ error: 'Error leyendo menú' }));
+        } else {
+          res.writeHead(200);
+          res.end(data);
+        }
+      });
+      return;
+    }
+
+    // GET /api/verify-token
+    if (reqUrl === '/api/verify-token' && req.method === 'GET') {
+      if (checkAuth(req)) {
+        res.writeHead(200);
+        res.end(JSON.stringify({ success: true }));
+      } else {
+        res.writeHead(401);
+        res.end(JSON.stringify({ error: 'No autorizado' }));
+      }
+      return;
+    }
+
+    // POST /api/menu (Save/Update entire menu)
+    if (reqUrl === '/api/menu' && req.method === 'POST') {
+      if (!checkAuth(req)) {
+        res.writeHead(401);
+        res.end(JSON.stringify({ error: 'No autorizado' }));
+        return;
+      }
+
+      const body = await parseJsonBody(req);
+      if (!body) {
+        res.writeHead(400);
+        res.end(JSON.stringify({ error: 'JSON inválido' }));
+        return;
+      }
+
+      const menuPath = path.join(__dirname, 'data', 'menu.json');
+      fs.writeFile(menuPath, JSON.stringify(body, null, 2), 'utf8', (err) => {
+        if (err) {
+          res.writeHead(500);
+          res.end(JSON.stringify({ error: 'Error guardando menú' }));
+        } else {
+          res.writeHead(200);
+          res.end(JSON.stringify({ success: true }));
+        }
+      });
+      return;
+    }
+
+    // GET /api/reviews
+    if (reqUrl === '/api/reviews' && req.method === 'GET') {
+      const reviewsPath = path.join(__dirname, 'data', 'reviews.json');
+      fs.readFile(reviewsPath, 'utf8', (err, data) => {
+        if (err) {
+          res.writeHead(200);
+          res.end(JSON.stringify({ reviews: [] }));
+        } else {
+          res.writeHead(200);
+          res.end(data);
+        }
+      });
+      return;
+    }
+
+    // POST /api/reviews (Add review)
+    if (reqUrl === '/api/reviews' && req.method === 'POST') {
+      const body = await parseJsonBody(req);
+      if (!body || !body.productId || !body.userName || !body.rating || !body.commentText) {
+        res.writeHead(400);
+        res.end(JSON.stringify({ error: 'Datos de reseña incompletos o inválidos' }));
+        return;
+      }
+
+      const reviewsPath = path.join(__dirname, 'data', 'reviews.json');
+      fs.readFile(reviewsPath, 'utf8', (err, data) => {
+        let reviewsData = { reviews: [] };
+        if (!err) {
+          try {
+            reviewsData = JSON.parse(data);
+          } catch (e) {
+            reviewsData = { reviews: [] };
+          }
+        }
+
+        const newReview = {
+          id: Date.now().toString(),
+          productId: body.productId,
+          userName: body.userName,
+          rating: Number(body.rating),
+          commentText: body.commentText,
+          date: new Date().toLocaleDateString('es-CL')
+        };
+
+        reviewsData.reviews.push(newReview);
+
+        fs.writeFile(reviewsPath, JSON.stringify(reviewsData, null, 2), 'utf8', (writeErr) => {
+          if (writeErr) {
+            res.writeHead(500);
+            res.end(JSON.stringify({ error: 'Error al guardar la reseña' }));
+          } else {
+            res.writeHead(201);
+            res.end(JSON.stringify(newReview));
+          }
+        });
+      });
+      return;
+    }
+
+    // DELETE /api/reviews (Moderate / Delete review)
+    if (reqUrl === '/api/reviews' && req.method === 'DELETE') {
+      if (!checkAuth(req)) {
+        res.writeHead(401);
+        res.end(JSON.stringify({ error: 'No autorizado' }));
+        return;
+      }
+
+      const body = await parseJsonBody(req);
+      if (!body || !body.reviewId) {
+        res.writeHead(400);
+        res.end(JSON.stringify({ error: 'ID de reseña faltante' }));
+        return;
+      }
+
+      const reviewsPath = path.join(__dirname, 'data', 'reviews.json');
+      fs.readFile(reviewsPath, 'utf8', (err, data) => {
+        if (err) {
+          res.writeHead(404);
+          res.end(JSON.stringify({ error: 'Archivo de reseñas no encontrado' }));
+          return;
+        }
+
+        let reviewsData = { reviews: [] };
+        try {
+          reviewsData = JSON.parse(data);
+        } catch (e) {
+          // invalid json
+        }
+
+        const initialLength = reviewsData.reviews.length;
+        reviewsData.reviews = reviewsData.reviews.filter(r => r.id !== body.reviewId);
+
+        if (reviewsData.reviews.length === initialLength) {
+          res.writeHead(404);
+          res.end(JSON.stringify({ error: 'Reseña no encontrada' }));
+          return;
+        }
+
+        fs.writeFile(reviewsPath, JSON.stringify(reviewsData, null, 2), 'utf8', (writeErr) => {
+          if (writeErr) {
+            res.writeHead(500);
+            res.end(JSON.stringify({ error: 'Error al actualizar reseñas' }));
+          } else {
+            res.writeHead(200);
+            res.end(JSON.stringify({ success: true }));
+          }
+        });
+      });
+      return;
+    }
+
+    // Default API 404
+    res.writeHead(404);
+    res.end(JSON.stringify({ error: 'Ruta de API no encontrada' }));
+    return;
+  }
+
   if (reqUrl === '/') reqUrl = '/index.html';
 
   let filePath = path.join(__dirname, reqUrl);
