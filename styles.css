@@ -1372,6 +1372,74 @@ body {
   margin-bottom: 1rem;
 }
 
+/* Cart Item Cards Redesign */
+.cart-item-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+.cart-item-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+/* Delivery Method Pill */
+.delivery-method-pill {
+  background: #f1f5f9;
+  border-radius: var(--radius-sm);
+  padding: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  margin-top: 8px;
+}
+.delivery-method-pill i {
+  color: var(--red-accent);
+}
+
+/* Time Toggle Segmented Control */
+.time-toggle-container {
+  display: flex;
+  background: #f1f5f9;
+  border-radius: var(--radius-md);
+  padding: 4px;
+  gap: 4px;
+  margin-top: 8px;
+}
+.time-toggle-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.6rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.time-toggle-btn.active {
+  background: #ffffff;
+  color: var(--text-dark);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
 /* ===================================================
    FLOATING BOTTOM MOBILE ORDER BAR
    =================================================== */
@@ -1921,4 +1989,86 @@ body {
     max-width: 60px;
     border-radius: 10px;
   }
+}
+
+/* ===================================================
+   CUSTOM CONFIRM MODAL
+   =================================================== */
+.confirm-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.confirm-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.confirm-modal-box {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 360px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(20px) scale(0.95);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.confirm-modal-overlay.active .confirm-modal-box {
+  transform: translateY(0) scale(1);
+}
+.confirm-modal-icon {
+  font-size: 3rem;
+  color: var(--red-accent);
+  margin-bottom: 1rem;
+}
+.confirm-modal-box h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-dark);
+  font-size: 1.25rem;
+}
+.confirm-modal-box p {
+  color: var(--text-muted);
+  margin: 0 0 1.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.confirm-modal-actions {
+  display: flex;
+  gap: 12px;
+}
+.btn-confirm-cancel, .btn-confirm-accept {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-confirm-cancel {
+  background: #f1f5f9;
+  color: var(--text-dark);
+}
+.btn-confirm-cancel:hover {
+  background: #e2e8f0;
+}
+.btn-confirm-accept {
+  background: var(--red-accent);
+  color: #ffffff;
+}
+.btn-confirm-accept:hover {
+  background: #dc2626;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
 }

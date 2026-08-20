@@ -25,282 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { "id": "combos", "name": "Combos Mixtos" },
       { "id": "salsas", "name": "Salsas y Extras" }
     ],
-    "items": [
-      {
-        "id": "sushi-30-piezas",
-        "category": "sushi",
-        "title": "Promo 30 Piezas de Sushi",
-        "price": 12990,
-        "price_display": "$12.990",
-        "badge": "30 PIEZAS",
-        "popular": true,
-        "description": "Arma tus 3 rolls (30 piezas en total) personalizando cada roll individualmente.",
-        "image": "assets/promo_sushi_ig.png",
-        "customizable": true,
-        "units_count": 3,
-        "unit_label": "Roll",
-        "per_unit_options": {
-          "envoltura": { "title": "Envoltura", "limit": 1, "choices": ["Palta", "Tempura Crispy", "Sésamo"] },
-          "proteina": { "title": "Proteína", "limit": 1, "choices": ["Pollo", "Camarón"] },
-          "agregados": { "title": "Verduras / Agregados (Queso crema incluido)", "limit": 2, "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"] }
-        },
-        "general_options": {
-          "salsas": { "title": "Salsa Incluida", "limit": 1, "choices": ["Salsa Soya", "Salsa Teriyaki"] }
-        }
-      },
-      {
-        "id": "sushi-40-piezas",
-        "category": "sushi",
-        "title": "Promo 40 Piezas de Sushi",
-        "price": 16990,
-        "price_display": "$16.990",
-        "badge": "40 PIEZAS",
-        "popular": true,
-        "description": "¡Mega promo familiar! Arma tus 4 rolls (40 piezas) personalizando cada roll como quieras.",
-        "image": "assets/promo_sushi_ig.png",
-        "customizable": true,
-        "units_count": 4,
-        "unit_label": "Roll",
-        "per_unit_options": {
-          "envoltura": { "title": "Envoltura", "limit": 1, "choices": ["Palta", "Tempura Crispy", "Sésamo"] },
-          "proteina": { "title": "Proteína", "limit": 1, "choices": ["Pollo", "Camarón"] },
-          "agregados": { "title": "Verduras / Agregados (Queso crema incluido ✨)", "limit": 2, "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"] }
-        },
-        "general_options": {
-          "salsas": { "title": "Salsas Incluidas", "limit": 2, "choices": ["Salsa Soya", "Salsa Teriyaki"] }
-        }
-      },
-      {
-        "id": "sushi-30-piezas-clasica",
-        "category": "sushi",
-        "title": "Promo 30 Piezas Clásicas (Lista para Servir)",
-        "price": 12990,
-        "price_display": "$12.990",
-        "badge": "LISTA PARA SERVIR",
-        "popular": false,
-        "description": "Sin personalizar, lista para servir. Incluye: 10 Piezas Envueltas en Palta, 10 Tempura Hot Roll y 10 Envueltas en Sésamo (Salsas Soya y Teriyaki incluidas).",
-        "image": "assets/promo_sushi_ig.png",
-        "customizable": false
-      },
-      {
-        "id": "sushi-40-piezas-clasica",
-        "category": "sushi",
-        "title": "Promo 40 Piezas Clásicas (Lista para Servir)",
-        "price": 16990,
-        "price_display": "$16.990",
-        "badge": "LISTA PARA SERVIR",
-        "popular": false,
-        "description": "Sin personalizar, lista para servir. Incluye: 10 Envueltas en Palta, 10 Tempura Hot Roll, 10 Envueltas en Sésamo y 10 Tempura de Pollo (Salsas Soya y Teriyaki incluidas).",
-        "image": "assets/promo_sushi_ig.png",
-        "customizable": false
-      },
-      {
-        "id": "sushi-roll-cebollin-crispy",
-        "category": "sushi",
-        "title": "Roll Cebollín Crispy Pollo Palta",
-        "price": 8490,
-        "price_display": "$8.490",
-        "badge": "10 PIEZAS PREMIUM",
-        "popular": true,
-        "description": "Exclusivo roll de 10 piezas relleno de Pollo crispy y Palta, envuelto en cebollín crocante y bañado con nuestra exquisita salsa de ají ahumado casera.",
-        "image": "assets/Cebollin_kryspi_pollo_palta_con_salsa_aji_ahumado.jpeg",
-        "customizable": false
-      },
-      {
-        "id": "handroll-1x",
-        "category": "handrolls",
-        "title": "1x Handroll Crispy",
-        "price": 5500,
-        "price_display": "$5.500",
-        "badge": "1 HANDROLL",
-        "popular": false,
-        "description": "Crocante y calentito. Arma tu Handroll Crispy con proteína, verduras y salsa.",
-        "image": "assets/promo_handrolls_ig.png",
-        "customizable": true,
-        "units_count": 1,
-        "unit_label": "Handroll",
-        "per_unit_options": {
-          "proteina": { "title": "Proteína a Elección", "limit": 1, "choices": ["Pollo", "Camarón"] },
-          "verduras": { "title": "Verduras a Elección (hasta 2)", "limit": 2, "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"] },
-          "salsa": { "title": "Salsa a Elección", "limit": 1, "choices": ["Salsa Soya", "Salsa Teriyaki"] }
-        }
-      },
-      {
-        "id": "handroll-2x",
-        "category": "handrolls",
-        "title": "2x Handrolls Crispy",
-        "price": 9990,
-        "price_display": "$9.990",
-        "badge": "¡MÁS POPULAR!",
-        "popular": true,
-        "description": "Super Promo 2 Handrolls Crispy. Personaliza los sabores de cada Handroll de forma independiente.",
-        "image": "assets/promo_handrolls_ig.png",
-        "customizable": true,
-        "units_count": 2,
-        "unit_label": "Handroll",
-        "per_unit_options": {
-          "proteina": { "title": "Proteína a Elección", "limit": 1, "choices": ["Pollo", "Camarón"] },
-          "verduras": { "title": "Verduras a Elección (hasta 2)", "limit": 2, "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"] },
-          "salsa": { "title": "Salsa a Elección", "limit": 1, "choices": ["Salsa Soya", "Salsa Teriyaki"] }
-        }
-      },
-      {
-        "id": "handroll-3x",
-        "category": "handrolls",
-        "title": "3x Handrolls Crispy",
-        "price": 13990,
-        "price_display": "$13.990",
-        "badge": "OFERTA 3X",
-        "popular": false,
-        "description": "3 Handrolls Crispy. Personaliza cada Handroll con su propia proteína, verduras y salsa.",
-        "image": "assets/promo_handrolls_ig.png",
-        "customizable": true,
-        "units_count": 3,
-        "unit_label": "Handroll",
-        "per_unit_options": {
-          "proteina": { "title": "Proteína a Elección", "limit": 1, "choices": ["Pollo", "Camarón"] },
-          "verduras": { "title": "Verduras a Elección (hasta 2)", "limit": 2, "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"] },
-          "salsa": { "title": "Salsa a Elección", "limit": 1, "choices": ["Salsa Soya", "Salsa Teriyaki"] }
-        }
-      },
-      {
-        "id": "empanada-1x",
-        "category": "empanadas",
-        "title": "1x Empanada Frita",
-        "price": 3000,
-        "price_display": "$3.000",
-        "badge": "1 EMPANADA",
-        "popular": false,
-        "description": "Base de Queso Mantecoso derretido + 1 Proteína + 1 Vegetal + Salsa casera a elección.",
-        "image": "assets/promo_empanada_1x.png",
-        "customizable": true,
-        "units_count": 1,
-        "unit_label": "Empanada",
-        "per_unit_options": {
-          "proteina": { "title": "Proteína", "limit": 1, "choices": ["Pollo", "Machas", "Camarón"] },
-          "vegetal": { "title": "Vegetal", "limit": 1, "choices": ["Cebollín", "Morrón", "Champiñón", "Choclo"] },
-          "salsa": { "title": "Salsa Casera", "limit": 1, "choices": ["Pebre Casero", "Ají Casero", "Cilantro Casero"] }
-        }
-      },
-      {
-        "id": "empanada-2x",
-        "category": "empanadas",
-        "title": "2x Empanadas Fritas",
-        "price": 5490,
-        "price_display": "$5.490",
-        "badge": "PROMO 2X",
-        "popular": true,
-        "description": "2 Empanadas. Elige el relleno de cada empanada de forma independiente.",
-        "image": "assets/promo_empanada_2x.png",
-        "customizable": true,
-        "units_count": 2,
-        "unit_label": "Empanada",
-        "per_unit_options": {
-          "proteina": { "title": "Proteína", "limit": 1, "choices": ["Pollo", "Machas", "Camarón"] },
-          "vegetal": { "title": "Vegetal", "limit": 1, "choices": ["Cebollín", "Morrón", "Champiñón", "Choclo"] },
-          "salsa": { "title": "Salsa Casera", "limit": 1, "choices": ["Pebre Casero", "Ají Casero", "Cilantro Casero"] }
-        }
-      },
-      {
-        "id": "empanada-3x",
-        "category": "empanadas",
-        "title": "3x Empanadas Fritas",
-        "price": 7990,
-        "price_display": "$7.990",
-        "badge": "PROMO 3X",
-        "popular": false,
-        "description": "3 Empanadas fritas al instante. Arma cada empanada a tu gusto.",
-        "image": "assets/promo_empanada_3x.png",
-        "customizable": true,
-        "units_count": 3,
-        "unit_label": "Empanada",
-        "per_unit_options": {
-          "proteina": { "title": "Proteína", "limit": 1, "choices": ["Pollo", "Machas", "Camarón"] },
-          "vegetal": { "title": "Vegetal", "limit": 1, "choices": ["Cebollín", "Morrón", "Champiñón", "Choclo"] },
-          "salsa": { "title": "Salsa Casera", "limit": 1, "choices": ["Pebre Casero", "Ají Casero", "Cilantro Casero"] }
-        }
-      },
-      {
-        "id": "empanada-5x",
-        "category": "empanadas",
-        "title": "5x Empanadas Fritas",
-        "price": 12990,
-        "price_display": "$12.990",
-        "badge": "PACK FAMILIAR 5X",
-        "popular": true,
-        "description": "¡Mega Pack 5 Empanadas! Personaliza las 5 empanadas una por una.",
-        "image": "assets/promo_empanada_3x.png",
-        "customizable": true,
-        "units_count": 5,
-        "unit_label": "Empanada",
-        "per_unit_options": {
-          "proteina": { "title": "Proteína", "limit": 1, "choices": ["Pollo", "Machas", "Camarón"] },
-          "vegetal": { "title": "Vegetal", "limit": 1, "choices": ["Cebollín", "Morrón", "Champiñón", "Choclo"] },
-          "salsa": { "title": "Salsa Casera", "limit": 1, "choices": ["Pebre Casero", "Ají Casero", "Cilantro Casero"] }
-        }
-      },
-      {
-        "id": "combo-mixto-especial",
-        "category": "combos",
-        "title": "Combo Mixto BestSushi",
-        "price": 18990,
-        "price_display": "$18.990",
-        "badge": "COMBO REY",
-        "popular": true,
-        "description": "20 Piezas de Sushi variadas + 2 Handrolls Crispy + 1 Empanada Frita.",
-        "image": "assets/promo_combos_ig.png",
-        "customizable": true,
-        "units_count": 2,
-        "unit_label": "Handroll Crispy",
-        "per_unit_options": {
-          "proteina": { "title": "Proteína Handroll", "limit": 1, "choices": ["Pollo", "Camarón"] },
-          "verduras": { "title": "Verduras Handroll", "limit": 2, "choices": ["Palta", "Cebollín", "Morrón", "Champiñón"] }
-        },
-        "general_options": {
-          "empanada_relleno": { "title": "Empanada Incluida", "limit": 1, "choices": ["Pollo + Queso Mantecoso", "Camarón + Queso Mantecoso"] },
-          "salsas": { "title": "Salsas Incluidas", "limit": 2, "choices": ["Salsa Soya", "Teriyaki", "Pebre Casero", "Ají Casero"] }
-        }
-      },
-      {
-        "id": "salsa-pebre",
-        "category": "salsas",
-        "title": "Pebre Casero BestSushi",
-        "price": 1000,
-        "price_display": "$1.000",
-        "badge": "RECETA CASERA",
-        "popular": true,
-        "description": "Delicioso pebre chileno casero preparado con tomates frescos, cebollita y cilantro picado.",
-        "image": "assets/promo_pebre_ig.png",
-        "customizable": false
-      },
-      {
-        "id": "salsa-teriyaki",
-        "category": "salsas",
-        "title": "Salsa Teriyaki Especial (Pote)",
-        "price": 1000,
-        "price_display": "$1.000",
-        "badge": "DULCE & ESPESA",
-        "popular": false,
-        "description": "Salsa Teriyaki artesanal reducida de sabor dulce y espeso perfecto para rolls y handrolls.",
-        "image": "assets/promo_salsas_ig.png",
-        "customizable": false
-      },
-      {
-        "id": "pack-salsas-trio",
-        "category": "salsas",
-        "title": "Trío de Salsas & Aderezos Caseros",
-        "price": 2500,
-        "price_display": "$2.500",
-        "badge": "PACK 3X SALSAS",
-        "popular": true,
-        "description": "Elige 3 porciones de tus aderezos favoritos: Pebre Casero, Salsa Teriyaki, Ají o Cilantro.",
-        "image": "assets/promo_salsas_ig.png",
-        "customizable": true,
-        "options": {
-          "salsas_adicionales": { "title": "Elige 3 Salsas o Aderezos", "limit": 3, "choices": ["Pebre Casero", "Salsa Teriyaki", "Ají Casero", "Cilantro Casero", "Salsa Soya Extra"] }
-        }
-      }
-    ]
+    "items": []
   };
 
   // Embedded Initial Fallback Reviews
@@ -601,6 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title: item.title,
         price: item.price,
         details: 'Opción estándar',
+        image: item.image,
         quantity: 1
       });
       openCart();
@@ -1330,6 +1056,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title: activeCustomizingItem.title,
         price: finalPrice,
         details: detailsStr,
+        image: activeCustomizingItem.image,
         quantity: 1
       });
 
@@ -1423,17 +1150,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const itemEl = document.createElement('div');
         itemEl.className = 'cart-item-card';
 
+        const imgSrc = item.image ? item.image : 'assets/promo_sushi_ig.png';
         itemEl.innerHTML = `
-          <div style="flex: 1; margin-right: 10px;">
-            <div style="font-weight: 800; font-size: 0.95rem; color: var(--text-dark);">${item.title}</div>
-            <div style="font-size: 0.78rem; color: var(--text-muted); margin: 2px 0 6px;">${item.details}</div>
+          <img src="${imgSrc}" class="cart-item-img" alt="${item.title}" onerror="this.src='assets/promo_sushi_ig.png'">
+          <div style="flex: 1; margin-right: 10px; display: flex; flex-direction: column; gap: 4px;">
+            <div style="font-weight: 800; font-size: 0.95rem; color: var(--text-dark); line-height: 1.2;">${item.title}</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">${item.details}</div>
             <div style="font-weight: 900; font-size: 0.95rem; color: var(--red-accent);">$${(item.price * item.quantity).toLocaleString('es-CL')}</div>
           </div>
-          <div style="display: flex; align-items: center; gap: 6px;">
-            <button class="quantity-btn btn-minus" data-idx="${idx}" style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-light); background: #fff; cursor: pointer; font-weight: 800;">-</button>
-            <span style="font-weight: 800; font-size: 0.9rem; min-width: 16px; text-align: center;">${item.quantity}</span>
-            <button class="quantity-btn btn-plus" data-idx="${idx}" style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-light); background: #fff; cursor: pointer; font-weight: 800;">+</button>
-            <button class="quantity-btn btn-remove" data-idx="${idx}" style="background: none; border: none; color: #ef4444; margin-left: 6px; cursor: pointer;"><i class="fas fa-trash-alt"></i></button>
+          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px;">
+             <button class="quantity-btn btn-remove" data-idx="${idx}" style="background: none; border: none; color: #ef4444; cursor: pointer; padding: 4px;"><i class="fas fa-trash-alt"></i></button>
+             <div style="display: flex; align-items: center; background: #f1f5f9; border-radius: 20px; padding: 2px;">
+                <button class="quantity-btn btn-minus" data-idx="${idx}" style="width: 24px; height: 24px; border-radius: 50%; border: none; background: #ffffff; color: var(--text-dark); cursor: pointer; font-weight: 800; box-shadow: 0 1px 2px rgba(0,0,0,0.1);">-</button>
+                <span style="font-weight: 800; font-size: 0.85rem; width: 24px; text-align: center; color: var(--text-dark);">${item.quantity}</span>
+                <button class="quantity-btn btn-plus" data-idx="${idx}" style="width: 24px; height: 24px; border-radius: 50%; border: none; background: #ffffff; color: var(--text-dark); cursor: pointer; font-weight: 800; box-shadow: 0 1px 2px rgba(0,0,0,0.1);">+</button>
+             </div>
           </div>
         `;
 
@@ -1446,6 +1177,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Custom Confirm Modal Logic
+  const confirmModalOverlay = document.getElementById('confirm-modal');
+  const confirmModalTitle = document.getElementById('confirm-modal-title');
+  const confirmModalMessage = document.getElementById('confirm-modal-message');
+  const confirmBtnAccept = document.getElementById('confirm-btn-accept');
+  const confirmBtnCancel = document.getElementById('confirm-btn-cancel');
+
+  function showConfirm(title, message, onConfirm) {
+    if (!confirmModalOverlay) return;
+    
+    confirmModalTitle.textContent = title;
+    confirmModalMessage.textContent = message;
+    
+    confirmModalOverlay.style.display = 'flex';
+    setTimeout(() => confirmModalOverlay.classList.add('active'), 10);
+    
+    const closeModal = () => {
+      confirmModalOverlay.classList.remove('active');
+      setTimeout(() => {
+        confirmModalOverlay.style.display = 'none';
+      }, 300);
+      confirmBtnAccept.removeEventListener('click', handleAccept);
+      confirmBtnCancel.removeEventListener('click', handleCancel);
+    };
+
+    const handleAccept = () => {
+      closeModal();
+      if (onConfirm) onConfirm();
+    };
+
+    const handleCancel = () => {
+      closeModal();
+    };
+
+    confirmBtnAccept.addEventListener('click', handleAccept);
+    confirmBtnCancel.addEventListener('click', handleCancel);
+  }
+
   function clearCart() {
     cart = [];
     saveCart();
@@ -1455,9 +1224,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (cartClearBtn) {
     cartClearBtn.addEventListener('click', () => {
       if (cart.length === 0) return;
-      if (confirm('¿Deseas vaciar tu carrito de compras?')) {
-        clearCart();
-      }
+      showConfirm(
+        'Vaciar Carrito', 
+        '¿Estás seguro de que deseas eliminar todos los productos de tu pedido?', 
+        () => {
+          clearCart();
+        }
+      );
     });
   }
 
@@ -2251,39 +2024,48 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Delete product
-  async function deleteProduct(productId) {
-    if (!confirm('¿Estás seguro de que quieres eliminar este producto del menú de forma permanente?')) return;
-    menuData.items = menuData.items.filter(item => item.id !== productId);
-    const success = await saveMenuDataToServer();
-    if (success) showToast('Producto eliminado permanentemente.');
+  function deleteProduct(productId) {
+    showConfirm(
+      'Eliminar Producto',
+      '¿Estás seguro de que quieres eliminar este producto del menú de forma permanente?',
+      async () => {
+        menuData.items = menuData.items.filter(item => item.id !== productId);
+        const success = await saveMenuDataToServer();
+        if (success) showToast('Producto eliminado permanentemente.');
+      }
+    );
   }
 
   // Delete/Moderate client review
-  async function deleteReview(reviewId) {
-    if (!confirm('¿Deseas eliminar este comentario?')) return;
-    try {
-      const response = await fetch('/api/reviews', {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-admin-token': adminToken
-        },
-        body: JSON.stringify({ reviewId })
-      });
-
-      if (response.ok) {
-        appReviews = appReviews.filter(r => r.id !== reviewId);
-        renderAdminCommentsTable();
-        renderProducts();
-        updateGlobalStoreRating();
-        showToast('Reseña eliminada correctamente.');
-      } else {
-        showToast('No se pudo borrar el comentario.', 'error');
+  function deleteReview(reviewId) {
+    showConfirm(
+      'Eliminar Comentario',
+      '¿Deseas eliminar este comentario permanentemente?',
+      async () => {
+        try {
+          const response = await fetch('/api/reviews', {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json',
+              'x-admin-token': adminToken
+            },
+            body: JSON.stringify({ reviewId })
+          });
+          if (response.ok) {
+            appReviews = appReviews.filter(r => r.id !== reviewId);
+            renderAdminCommentsTable();
+            renderProducts();
+            updateGlobalStoreRating();
+            showToast('Reseña eliminada correctamente.');
+          } else {
+            showToast('No se pudo borrar el comentario.', 'error');
+          }
+        } catch (e) {
+          console.error(e);
+          showToast('Error de conexión al servidor.', 'error');
+        }
       }
-    } catch (e) {
-      console.error(e);
-      showToast('Error de conexión al servidor.', 'error');
-    }
+    );
   }
 
 

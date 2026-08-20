@@ -375,10 +375,11 @@
       <div class="cart-order-details"
         style="margin-top: auto; border-top: 1px solid var(--border-subtle); padding: 1rem 1.5rem;">
         <div class="cart-detail-group">
-          <label for="cart-delivery-method">
-            <i class="fas fa-store"></i> Modalidad de entrega:
-          </label>
-          <select id="cart-delivery-method">
+          <label><i class="fas fa-store"></i> Modalidad de entrega:</label>
+          <div class="delivery-method-pill">
+            <i class="fas fa-walking"></i> Retiro en Local
+          </div>
+          <select id="cart-delivery-method" style="display:none;">
             <option value="Retiro en Local" selected>Retiro en Local</option>
           </select>
         </div>
@@ -422,12 +423,12 @@
 
     <div class="cart-footer">
       <div class="cart-total-row">
-        <span>Total:</span>
-        <span class="text-gold" id="cart-total-amount">$0</span>
+        <span style="font-size: 1.1rem; font-weight: 700;">Total a pagar</span>
+        <span class="text-gold" id="cart-total-amount" style="font-size: 1.4rem; font-weight: 900;">$0</span>
       </div>
       <a href="#" target="_blank" rel="noopener noreferrer" class="btn-whatsapp btn-checkout-whatsapp"
-        id="checkout-whatsapp-btn">
-        <i class="fab fa-whatsapp"></i> Enviar Pedido a WhatsApp
+        id="checkout-whatsapp-btn" style="border-radius: 12px; padding: 1rem; font-size: 1.05rem; box-shadow: 0 4px 14px rgba(37,211,102,0.3);">
+        <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> Completar Pedido por WhatsApp
       </a>
     </div>
   </aside>
@@ -686,6 +687,21 @@
       <i class="fas fa-chevron-right"></i>
     </button>
   </aside>
+
+  <!-- ================= CUSTOM CONFIRM MODAL ================= -->
+  <div class="confirm-modal-overlay" id="confirm-modal" style="display: none;">
+    <div class="confirm-modal-box">
+      <div class="confirm-modal-icon">
+        <i class="fas fa-exclamation-triangle"></i>
+      </div>
+      <h3 id="confirm-modal-title">¿Estás seguro?</h3>
+      <p id="confirm-modal-message">¿Deseas realizar esta acción?</p>
+      <div class="confirm-modal-actions">
+        <button class="btn-confirm-cancel" id="confirm-btn-cancel">Cancelar</button>
+        <button class="btn-confirm-accept" id="confirm-btn-accept">Sí, continuar</button>
+      </div>
+    </div>
+  </div>
 
   <!-- ================= TOAST NOTIFICATIONS ================= -->
   <div id="toast-container" class="toast-container"></div>
