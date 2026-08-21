@@ -56,7 +56,7 @@
           <i class="fas fa-search"></i>
           <input type="text" id="menu-search-input" placeholder="Buscar en el menú..." autocomplete="off">
           <div id="search-dropdown-results" class="search-dropdown" style="display: none;"></div>
-        </div>
+        </div>|
 
         <div class="topbar-actions">
           <a href="#eventos" class="nav-link-eventos"><i class="fas fa-glass-cheers"></i> Eventos</a>
@@ -121,15 +121,6 @@
     </div>
   </section>
 
-  <!-- ================= STICKY CATEGORIES NAV BAR ================= -->
-  <nav class="sticky-categories-bar" id="sticky-categories-bar">
-    <div class="container">
-      <div class="categories-scroll-wrap" id="categories-nav">
-        <!-- Dynamically rendered via app.js with chips/pills -->
-      </div>
-    </div>
-  </nav>
-
   <!-- ================= PROMO EVENTOS BANNER ================= -->
   <section class="promo-eventos-banner fade-in-up">
     <div class="container">
@@ -162,6 +153,15 @@
       </div>
     </div>
   </section>
+
+  <!-- ================= STICKY CATEGORIES NAV BAR ================= -->
+  <nav class="sticky-categories-bar" id="sticky-categories-bar">
+    <div class="container">
+      <div class="categories-scroll-wrap" id="categories-nav">
+        <!-- Dynamically rendered via app.js with chips/pills -->
+      </div>
+    </div>
+  </nav>
 
   <!-- ================= MENU & PROMOS SECTION ================= -->
   <section id="menu" class="menu-section">
@@ -428,7 +428,8 @@
         <span class="text-gold" id="cart-total-amount" style="font-size: 1.4rem; font-weight: 900;">$0</span>
       </div>
       <a href="#" target="_blank" rel="noopener noreferrer" class="btn-whatsapp btn-checkout-whatsapp"
-        id="checkout-whatsapp-btn" style="border-radius: 12px; padding: 1rem; font-size: 1.05rem; box-shadow: 0 4px 14px rgba(37,211,102,0.3);">
+        id="checkout-whatsapp-btn"
+        style="border-radius: 12px; padding: 1rem; font-size: 1.05rem; box-shadow: 0 4px 14px rgba(37,211,102,0.3);">
         <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> Completar Pedido por WhatsApp
       </a>
     </div>

@@ -374,19 +374,16 @@ document.addEventListener('DOMContentLoaded', () => {
           <p class="product-desc">${item.description}</p>
           <div class="product-footer">
             <span class="product-price">${item.price_display || '$' + item.price.toLocaleString('es-CL')}</span>
-            <button class="btn-add-item" data-id="${item.id}">
-              <i class="fas ${item.customizable ? 'fa-sliders-h' : 'fa-plus'}"></i>
-              ${item.customizable ? 'Personalizar pedido' : 'Agregar'}
-            </button>
           </div>
         </div>
       `;
 
       // Event Listeners
-      const addBtn = card.querySelector('.btn-add-item');
-      addBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        handleAddProductClick(item);
+      card.addEventListener('click', (e) => {
+        // Prevent click if clicking the reviews link
+        if (!e.target.closest('.btn-reviews-link')) {
+          handleAddProductClick(item);
+        }
       });
 
       const reviewsBtn = card.querySelector('.btn-reviews-link');
@@ -395,11 +392,6 @@ document.addEventListener('DOMContentLoaded', () => {
           e.stopPropagation();
           openReviewsModal(item);
         });
-      }
-
-      const imgWrap = card.querySelector('.product-card-img-wrap');
-      if (imgWrap) {
-        imgWrap.addEventListener('click', () => handleAddProductClick(item));
       }
 
       productsGrid.appendChild(card);

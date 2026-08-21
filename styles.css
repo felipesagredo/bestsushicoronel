@@ -667,6 +667,7 @@ body::before {
   flex-direction: column;
   transition: var(--transition);
   box-shadow: var(--shadow-card);
+  cursor: pointer;
   content-visibility: auto;
   contain-intrinsic-size: 360px;
 }
@@ -793,18 +794,6 @@ body::before {
   color: var(--text-dark);
 }
 
-.btn-add-item {
-  background: #ffffff;
-  border: 1px solid var(--red-accent);
-  color: var(--red-accent);
-  padding: 0.45rem 1rem;
-  border-radius: var(--radius-pill);
-  font-weight: 700;
-  font-size: 0.82rem;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
   transition: var(--transition);
 }
 
