@@ -65,15 +65,24 @@ html {
 
 body {
   font-family: var(--font-main);
-  background-color: var(--bg-dark); /* Fallback oscuro */
-  background-image: url('assets/bg_asian_pattern.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
   color: var(--text-main);
   line-height: 1.5;
   padding-bottom: 70px; /* Space for floating mobile bottom bar */
   overflow-x: clip;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-dark); /* Fallback oscuro */
+  background-image: url('assets/bg_asian_pattern.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
 }
 
 .container {
