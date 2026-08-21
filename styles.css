@@ -65,7 +65,11 @@ html {
 
 body {
   font-family: var(--font-main);
-  background-color: var(--bg-app);
+  background-color: var(--bg-dark); /* Fallback oscuro */
+  background-image: url('assets/bg_asian_pattern.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   color: var(--text-main);
   line-height: 1.5;
   padding-bottom: 70px; /* Space for floating mobile bottom bar */
@@ -156,6 +160,7 @@ body {
   max-width: 400px;
   display: flex;
   align-items: center;
+  position: relative;
   background: #f1f5f9;
   border-radius: var(--radius-pill);
   padding: 0.5rem 1rem;
@@ -186,6 +191,69 @@ body {
 .header-search-bar input::placeholder {
   color: #94a3b8;
   font-weight: 500;
+}
+
+/* Search Dropdown */
+.search-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-hover);
+  max-height: 350px;
+  overflow-y: auto;
+  z-index: 2000;
+  margin-top: 8px;
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+}
+.search-dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  gap: 12px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-light);
+  transition: var(--transition);
+  text-decoration: none;
+  color: var(--text-dark);
+}
+.search-dropdown-item:last-child {
+  border-bottom: none;
+}
+.search-dropdown-item:hover {
+  background: #f8fafc;
+}
+.search-dropdown-img {
+  width: 45px;
+  height: 45px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+.search-dropdown-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.search-dropdown-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+.search-dropdown-price {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--red-accent);
+  margin-top: 2px;
+}
+.search-dropdown-empty {
+  padding: 15px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
 }
 
 .topbar-actions {
@@ -385,10 +453,8 @@ body {
    =================================================== */
 .sticky-categories-bar {
   position: relative;
-  background: var(--bg-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-light);
+  background: transparent;
+  border-bottom: none;
   padding: 0.65rem 0;
   margin-top: 0.5rem;
 }

@@ -214,28 +214,77 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Search Bar Event Listener
-  if (menuSearchInput) {
-    menuSearchInput.addEventListener('input', (e) => {
-      const query = e.target.value;
-      
-      if (query.trim() !== '' && currentCategory !== 'todas') {
-        currentCategory = 'todas';
-        document.querySelectorAll('.category-btn').forEach(b => {
-          if (b.textContent === 'Todas las Promos' || b.textContent.includes('Todas')) {
-            b.classList.add('active');
-          } else {
-            b.classList.remove('active');
-          }
-        });
+  // Search Bar Event Listener (Dropdown Auto-complete)
+  const searchDropdown = document.getElementById('search-dropdown-results');
+  if (menuSearchInput && searchDropdown) {
+    // Hide dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!menuSearchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
+        searchDropdown.style.display = 'none';
       }
+    });
 
-      renderProducts(query);
-      
-      const menuSection = document.getElementById('menu');
-      if (query.length === 1 && menuSection && window.scrollY < menuSection.offsetTop - 100) {
-        menuSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    menuSearchInput.addEventListener('focus', (e) => {
+      if (e.target.value.trim() !== '') {
+        searchDropdown.style.display = 'flex';
       }
+    });
+
+    menuSearchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      
+      if (query === '') {
+        searchDropdown.style.display = 'none';
+        searchDropdown.innerHTML = '';
+        
+        // Reset category view if needed
+        if (currentCategory === 'todas') {
+          renderProducts('');
+        }
+        return;
+      }
+      
+      searchDropdown.style.display = 'flex';
+      
+      // Filter items
+      const filtered = menuData.items.filter(item => 
+        item.title.toLowerCase().includes(query) || 
+        (item.description && item.description.toLowerCase().includes(query)) ||
+        (item.badge && item.badge.toLowerCase().includes(query))
+      );
+      
+      searchDropdown.innerHTML = '';
+      
+      if (filtered.length === 0) {
+        searchDropdown.innerHTML = '<div class="search-dropdown-empty">No se encontraron productos.</div>';
+        return;
+      }
+      
+      filtered.forEach(item => {
+        const div = document.createElement('a');
+        div.className = 'search-dropdown-item';
+        div.innerHTML = `
+          <img src="${item.image}" alt="${item.title}" class="search-dropdown-img">
+          <div class="search-dropdown-info">
+            <span class="search-dropdown-title">${item.title}</span>
+            <span class="search-dropdown-price">${item.price_display}</span>
+          </div>
+        `;
+        
+        div.addEventListener('click', (ev) => {
+          ev.preventDefault();
+          searchDropdown.style.display = 'none';
+          menuSearchInput.value = '';
+          
+          // Reset category grid back to normal
+          renderProducts('');
+          
+          // Call handleAddProductClick
+          handleAddProductClick(item);
+        });
+        
+        searchDropdown.appendChild(div);
+      });
     });
   }
 

@@ -9,6 +9,33 @@ const path = require('path');
 
 const PORT = process.env.PORT || 8080;
 
+// Sync generated product images if in local environment
+const brainDir = 'C:\\Users\\felip\\.gemini\\antigravity-ide\\brain\\37be390c-dee3-401b-84fc-8d53faf328bf';
+const imgMap = {
+  'sushi_30_piezas_1787288485973.jpg': 'assets/promo_sushi_30.jpg',
+  'sushi_40_piezas_1787288504535.jpg': 'assets/promo_sushi_40.jpg',
+  'sushi_30_clasica_1787288533229.jpg': 'assets/promo_sushi_30_clasica.jpg',
+  'sushi_40_clasica_1787288560555.jpg': 'assets/promo_sushi_40_clasica.jpg',
+  'handroll_1x_1787288593038.jpg': 'assets/promo_handroll_1x.jpg',
+  'handroll_2x_1787288635782.jpg': 'assets/promo_handroll_2x.jpg',
+  'handroll_3x_1787288676406.jpg': 'assets/promo_handroll_3x.jpg',
+  'empanada_5x_1787288720106.jpg': 'assets/promo_empanada_5x.jpg',
+  'combo_mixto_rey_1787288768360.jpg': 'assets/promo_combos_mixto.jpg',
+  'salsa_teriyaki_1787288822030.jpg': 'assets/promo_salsa_teriyaki.jpg',
+  'salsas_trio_1787288883541.jpg': 'assets/promo_salsas_trio.jpg'
+};
+try {
+  for (const [src, dst] of Object.entries(imgMap)) {
+    const srcPath = path.join(brainDir, src);
+    const dstPath = path.join(__dirname, dst);
+    if (fs.existsSync(srcPath) && !fs.existsSync(dstPath)) {
+      fs.copyFileSync(srcPath, dstPath);
+    }
+  }
+} catch(e) {
+  // Ignored if in cloud environment
+}
+
 const MIME_TYPES = {
   '.html': 'text/html; charset=UTF-8',
   '.css': 'text/css; charset=UTF-8',
